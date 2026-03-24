@@ -67,7 +67,7 @@ $imageId = request()->route('imageId');
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>
-                                            <img src="{{ $languages[0]->domain .'/'. getFolder(['uploads_folder', 'using_area_images_folder'], $item->lang) . '/' . $item->image }}" alt="{{ $item->alt }}" class="img-thumbnail" width="100">
+                                            <img src="{{ $languages[0]->domain .'/'. getFolder(['uploads_folder', 'using_areas_images_folder'], $item->lang) . '/' . $item->image }}" alt="{{ $item->alt }}" class="img-thumbnail" width="100">
                                         </td>
                                         <td>
                                             <a href="{{ route('admin.using_areas.gallery.edit', [$id, $item->image_id]) }}" class="btn btn-warning btn-sm">

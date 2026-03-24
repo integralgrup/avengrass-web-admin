@@ -11,7 +11,7 @@ class UsingAreasGallery extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'using_areas_gallery';
+    protected $table = 'using_area_gallery';
 
     protected $fillable = [
         'using_areas_id',

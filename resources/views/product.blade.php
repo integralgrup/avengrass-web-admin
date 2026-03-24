@@ -101,7 +101,7 @@ $breadcrumbTitle = $product->title;
 
                                 <div class="inner-wrapper relative">
                                     <div class="list-wrapper grid grid-cols-3 gap-60 xl:gap-50 lg:gap-40 md:gap-30 relative z-20 [&_.item:nth-child(3n+3)_.split]:hidden srb-short-all xs:grid-cols-2 pt-[10px]">
-                                        <?php foreach ($features as $key => $item) : ?>
+                                        <?php foreach ($product->features as $key => $item) : ?>
                                             <div class="item group/item relative duration-450 hover:-translate-y-4">
                                                 <div class="image h-[60px] xs:h-[40px] sm:h-[50px] w-[60px] xs:w-[40px] sm:w-[50px] overflow-hidden translate-z-0 mx-auto">
                                                     <img src="<?= env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], $product->lang) .'/'. $item['image'] ?>" class="full-contain" loading="lazy" alt="">
@@ -117,7 +117,7 @@ $breadcrumbTitle = $product->title;
                             </div>
 
                             <!-- SHOW MORE BUTONU 6 ADETTEN FAZLA (7 ADET VE ÜZERİ) İÇERİK VARSA GÖRÜNECEK ŞEKİLDE AYARLANDI. -->
-                            <?php if (count($features) > 6) : ?>
+                            <?php if (count($product->features) > 6) : ?>
                                 <div class="show-more-button group/show-check absolute bottom-0 left-1/2 -translate-x-1/2 z-20 w-full
                                 duration-450 opacity-0 invisible group-[&.show-button]/inner-wrapper:opacity-100 group-[&.show-button]/inner-wrapper:visible
                                 group-[&.less-check]/inner-wrapper:opacity-100 group-[&.less-check]/inner-wrapper:visible" data-show-more="Show More" data-show-less="Show Less">
@@ -143,6 +143,7 @@ $breadcrumbTitle = $product->title;
                                         <!-- VİMEO ÖRNEĞİ -->
                                         
                                         <!-- .mp4 VİDEO ÖRNEĞİ -->
+                                         @if($product->video_file)
                                         <div class="swiper-slide group/slide" data-image="../assets/image/other/image-2.jpg" data-id="2" data-type="video">
                                             <div class="content relative h-full">
                                                 <div class="image-field relative translate-z-0 h-full">
@@ -152,6 +153,7 @@ $breadcrumbTitle = $product->title;
                                                 </div>
                                             </div>
                                         </div>
+                                        @endif
                                         <!-- RESİM ÖRNEĞİ -->
                                         <?php foreach ($product->images as $i => $image) : ?>
                                             <div class="swiper-slide group/slide" data-image="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], $product->lang) .'/'. $image->image}}" data-id="<?= $i ?>" data-type="image">
@@ -397,24 +399,18 @@ $breadcrumbTitle = $product->title;
                             <div class="gradient absolute left-0 top-0 bg-gradient-to-b from-black/15 to-main-500/0 rounded-[20px] duration-450 w-full h-full"></div>
                             <div class="content p-50 xl:p-40 lg:p-30 md:p-25 bg-[#F3F9F5] relative z-10 rounded-[20px]">
                                 <div class="inner-wrapper grid grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-[30px]">
-                                    <div class="image-box group/image-box">
-                                        <a class="image flex w-full group/image group/popup relative h-[400px] xs:h-250 sm:h-300 md:h-350 lg:h-400 overflow-hidden rounded-20 cursor-pointer translate-z-0" href="single-usage-area.php">
-                                            <img src="../assets/image/other/image-1.jpg" class="full-cover rounded-20 duration-450 group-hover/image:scale-110" loading="lazy" alt="">
-                                            <div class="gradient bg-[#000000]/50 absolute top-0 left-0 w-full h-full z-2 translate-z-0 duration-450 opacity-0 group-hover/image-box:opacity-100 flex items-center justify-center"></div>
-                                        </a>
-                                        <p class="text text-18 sm:text-16 font-light text-[#111111] leading-tight pl-10 sm:pl-0 duration-450 group-hover/image-box:text-main-500 mt-10">Terrace 1</p>
-                                    </div>
-                                    <?php for ($i = 2; $i <= 5; $i++) : ?>
+                                    
+                                    <?php foreach ($product->gallery as $item) : ?>
                                         <div class="image-box group/image-box">
-                                            <a class="image flex w-full group/image group/popup relative h-[400px] xs:h-250 sm:h-300 md:h-350 lg:h-400 overflow-hidden rounded-20 cursor-pointer translate-z-0" href="../assets/image/other/image-<?= $i ?>.jpg" data-fancybox="tabGallery" data-caption="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque architecto facere repudiandae exercitationem culpa, natus fugiat ab iure alias commodi, corrupti quod adipisci. Eligendi amet veritatis ipsam debitis neque reiciendis!">
-                                                <img src="../assets/image/other/image-<?= $i ?>.jpg" class="full-cover rounded-20 duration-450 group-hover/image:scale-110" loading="lazy" alt="">
+                                            <a class="image flex w-full group/image group/popup relative h-[400px] xs:h-250 sm:h-300 md:h-350 lg:h-400 overflow-hidden rounded-20 cursor-pointer translate-z-0" href="{{ env('HTTP_DOMAIN').'/'.getFolder(['uploads_folder', 'product_images_folder']).'/'. $item->image}}" data-fancybox="tabGallery" data-caption="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque architecto facere repudiandae exercitationem culpa, natus fugiat ab iure alias commodi, corrupti quod adipisci. Eligendi amet veritatis ipsam debitis neque reiciendis!">
+                                                <img src="{{ env('HTTP_DOMAIN').'/'.getFolder(['uploads_folder', 'product_images_folder']).'/'. $item->image}}" class="full-cover rounded-20 duration-450 group-hover/image:scale-110" loading="lazy" alt="">
                                                 <div class="gradient bg-[#000000]/50 absolute top-0 left-0 w-full h-full z-2 translate-z-0 duration-450 opacity-0 group-hover/image-box:opacity-100 flex items-center justify-center">
                                                     <div class="text-field flex flex-col items-center justify-center space-y-[20px] duration-450 translate-y-20 opacity-0 group-hover/image-box:opacity-100 group-hover/image-box:translate-y-0"></div>
                                                 </div>
                                             </a>
-                                            <p class="text text-18 sm:text-16 font-light text-[#111111] leading-tight pl-10 sm:pl-0 duration-450 group-hover/image-box:text-main-500 mt-10">Terrace <?= $i ?></p>
+                                            <p class="text text-18 sm:text-16 font-light text-[#111111] leading-tight pl-10 sm:pl-0 duration-450 group-hover/image-box:text-main-500 mt-10"><?= $item->title ?></p>
                                         </div>
-                                    <?php endfor; ?>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
                         </div>

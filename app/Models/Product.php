@@ -74,10 +74,10 @@ class Product extends Model
         return $this->hasOne(ProductCategory::class, 'category_id', 'category_id')->orderBy('sort')->where('lang', app()->getLocale());
     }
 
-    /*public function features()
+    public function features()
     {
         return $this->hasMany(ProductFeature::class, 'product_id', 'product_id')->orderBy('sort')->where('lang', app()->getLocale());
-    }*/
+    }
 
     public function features2()
     {

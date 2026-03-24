@@ -35,7 +35,7 @@ class ProductFeature extends Model
     // Define relationship with Product model
     public function product()
     {
-        return $this->belongsTo(Product::class, 'product_id', 'id');
+        return $this->belongsTo(Product::class, 'product_id', 'product_id');
     }
 
 }

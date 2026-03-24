@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php if (!empty($pageTitle)) echo $pageTitle . ' - '; ?><?= $nameofProject; ?></title>
+    @if(isset($seo))
+    <meta name="keywords" content="{{ $seo->seo_keywords }}">
+    <meta name="description" content="{{ $seo->seo_description }}">
+    <?php $pageTitle = $seo->seo_title;?>
+    @endif
     <meta name="description" content="Avengrass frontend demo.">
     <link rel="shortcut icon" href="../assets/image/trademark/favicon.png" type="image/x-icon">
     <!-- Önbellek tutmasın diye ekledim; '?id<?= rand(); ?>' yazısını silersin -->

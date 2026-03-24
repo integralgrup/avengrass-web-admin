@@ -165,7 +165,7 @@ class BlogController extends Controller
                 ['slider_id' => $slider_id, 'lang' => $language->lang_code],
                 [
                     'blog_id' => $id,
-                    'media_file' => $imageName,
+                    'image' => $imageName,
                     'alt' => $request->input('alt_' . $language->lang_code) ?? $request->input('alt_en'),
                 ]
             );

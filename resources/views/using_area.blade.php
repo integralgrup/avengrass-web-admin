@@ -4,6 +4,7 @@
 <?php 
 $pageTitle = $using_area->title;
 $breadcrumbTitle = $using_area->title;
+//dd($using_area)
 ?>
 <main class="main-field header-space-padding">
     <!-- USAGE AREA IMAGE CONTENT -->

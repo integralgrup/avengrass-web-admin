@@ -70,7 +70,10 @@
                                                 <i class="bi bi-pencil"></i> Düzenle
                                             </a>
                                             <a href="{{ route('admin.product.images.index', $item->product_id) }}" class="btn btn-warning btn-sm">
-                                                <i class="bi bi-images"></i> Galeri
+                                                <i class="bi bi-images"></i> Görseller
+                                            </a>
+                                            <a href="{{ route('admin.product.gallery.index', $item->product_id) }}" class="btn btn-warning btn-sm">
+                                                <i class="bi bi-images"></i> Kullanım Alanları
                                             </a>
                                             <a href="{{ route('admin.product.features.index', $item->product_id) }}" class="btn btn-secondary btn-sm">
                                                 <i class="bi bi-camera-video"></i> Features

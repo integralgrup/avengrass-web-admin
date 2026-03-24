@@ -61,18 +61,18 @@
                                 @foreach($usingAreas as $key => $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->title_1 }}</td>
+                                        <td>{{ $item->title }}</td>
                                         <td>
-                                            <img src="{{ $languages[0]->domain .'/'. getFolder(['uploads_folder', 'using_area_images_folder'], $item->lang) . '/' . $item->image }}" alt="{{ $item->alt }}" class="img-thumbnail" width="100">
+                                            <img src="{{ $languages[0]->domain .'/'. getFolder(['uploads_folder', 'using_areas_images_folder'], $item->lang) . '/' . $item->image }}" alt="{{ $item->alt }}" class="img-thumbnail" width="100">
                                         </td>
                                         <td>
-                                            <a href="{{ route('admin.using_areas.gallery.index', $item->using_areas_id) }}" class="btn btn-warning btn-sm">
+                                            <a href="{{ route('admin.using_areas.gallery.index', $item->using_area_id) }}" class="btn btn-warning btn-sm">
                                                 <i class="bi bi-images"></i> Galeri
                                             </a>
-                                            <a href="{{ route('admin.using_areas.edit', $item->using_areas_id) }}" class="btn btn-success btn-sm">
+                                            <a href="{{ route('admin.using_areas.edit', $item->using_area_id) }}" class="btn btn-success btn-sm">
                                                 <i class="bi bi-pencil"></i> Düzenle
                                             </a>
-                                            <form action="{{ route('admin.using_areas.destroy', $item->using_areas_id) }}" method="POST" style="display:inline;">
+                                            <form action="{{ route('admin.using_areas.destroy', $item->using_area_id) }}" method="POST" style="display:inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Bu içeriği silmek istediğinize emin misiniz?')">

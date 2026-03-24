@@ -476,7 +476,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="button-field flex items-center justify-center mt-100 2xl:mt-80 xl:mt-60 lg:mt-45 md:mt-30 sm:mt-20" dir="ltr">
-                                                    <a href="single-usage-area.php" class="button group/button w-fit min-w-[200px] h-[50px] flex justify-center items-center px-[30px] rounded-full bg-main-500 relative gap-15 duration-450 overflow-hidden before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-main-600 hover:before:left-0 before:duration-450">
+                                                    <a href="<?= env('HTTP_DOMAIN') . '/' . getUrl('using_areas_url') .'/'. $item->seo_url ?>" class="button group/button w-fit min-w-[200px] h-[50px] flex justify-center items-center px-[30px] rounded-full bg-main-500 relative gap-15 duration-450 overflow-hidden before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-main-600 hover:before:left-0 before:duration-450">
                                                         <div class="text text-16 flex items-center text-white relative z-10 leading-tight duration-450 group-hover/button:text-white font-normal rtl:order-2">View</div>
                                                         <div class="icon-arrow-right text-[16px] height-[10px] leading-none flex items-center text-white relative z-10 duration-450 group-hover/button:text-white group-hover/button:translate-x-[5px] rtl:-scale-x-100 rtl:group-hover/button:translate-x-[-5px] rtl:order-1"></div>
                                                     </a>
@@ -590,12 +590,12 @@
                                                 <p style="font-weight: 300;"><?= $item->summary ?></p>
                                             </div>
                                             <div class="image-field relative translate-z-0 h-full rounded-[20px] overflow-hidden hidden sm:flex sm:mt-20">
-                                                <a href="single-service.php" class="image flex w-full group/image group/popup relative h-full xs:h-250 sm:h-300 md:h-350 overflow-hidden cursor-pointer translate-z-0 duration-350 hover:scale-105" href="../assets/image/other/image-<?= $key + 1 ?>.jpg">
+                                                <a href="<?= env('HTTP_DOMAIN') . '/' . getUrl('services_url') .'/'. $item->seo_url ?>" class="image flex w-full group/image group/popup relative h-full xs:h-250 sm:h-300 md:h-350 overflow-hidden cursor-pointer translate-z-0 duration-350 hover:scale-105" href="../assets/image/other/image-<?= $key + 1 ?>.jpg">
                                                     <img src="" class="full-cover duration-450" loading="lazy" alt="" data-swiper-parallax="50%">
                                                 </a>
                                             </div>
                                             <div class="button-field mt-30 sm:mt-20 sm:hidden">
-                                                <a href="single-service.php" class="button group/button min-w-[200px] w-fit h-[50px] flex justify-center items-center px-[30px] rounded-full bg-main-500 relative gap-15 duration-450 overflow-hidden before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-main-600 hover:before:left-0 before:duration-450">
+                                                <a href="<?= env('HTTP_DOMAIN') . '/' . getUrl('services_url') .'/'. $item->seo_url ?>" class="button group/button min-w-[200px] w-fit h-[50px] flex justify-center items-center px-[30px] rounded-full bg-main-500 relative gap-15 duration-450 overflow-hidden before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-main-600 hover:before:left-0 before:duration-450">
                                                     <div class="text text-16 flex items-center text-white relative z-10 leading-tight duration-450 group-hover/button:text-white">View</div>
                                                     <div class="icon-arrow-right text-[16px] height-[16px] leading-none flex items-center text-white relative z-10 duration-450 group-hover/button:text-white group-hover/button:translate-x-[5px] rtl:-scale-x-100 rtl:group-hover/button:translate-x-[-5px]"></div>
                                                 </a>
@@ -616,7 +616,7 @@
                                 <div class="carousel-field relative h-full">
                                     <div class="content relative h-full">
                                         <div class="image-field relative translate-z-0 h-full rounded-[20px] overflow-hidden">
-                                            <a href="single-service.php" class="image flex w-full group/image group/popup relative h-full xs:h-250 sm:h-300 md:h-350 overflow-hidden cursor-pointer translate-z-0 duration-350 hover:scale-105" href="../assets/image/other/image-<?= $key + 1 ?>.jpg">
+                                            <a href="<?= env('HTTP_DOMAIN') . '/' . getUrl('services_url') .'/'. $item->seo_url ?>" class="image flex w-full group/image group/popup relative h-full xs:h-250 sm:h-300 md:h-350 overflow-hidden cursor-pointer translate-z-0 duration-350 hover:scale-105" href="../assets/image/other/image-<?= $key + 1 ?>.jpg">
                                                 <img src="<?= env('HTTP_DOMAIN').'/'. getFolder(['uploads_folder','service_images_folder'], $item->lang).'/'.$item->image_2 ?>" class="full-cover duration-450" loading="lazy" alt="" data-swiper-parallax="50%">
                                             </a>
                                         </div>
@@ -844,7 +844,7 @@
                                                     <i class="icon icon-calendar text-[16px] h-[16px] text-[#111111] block leading-none duration-450"></i>
                                                     <p class="text text-16 leading-tight text-[#111111] group-hover/date:translate-x-5 duration-450"><?= date( 'd/m/Y', strtotime($item->created_at) ); ?></p>
                                                 </div>
-                                                <a href="single-blog.php" class="title flex text-28 xl:text-26 lg:text-24 md:text-22 sm:text-20 xs:text-18 leading-tight text-[#111111] duration-450 hover:text-main-500 font-semibold mt-20 md:mt-15 group-hover/slide:text-main-500 group-hover/slide:hover:text-main-600"><?= $item->title ?></a>
+                                                <a href="<?= env('HTTP_DOMAIN') . '/' . getUrl('blog_url') .'/'. $item->seo_url ?>" class="title flex text-28 xl:text-26 lg:text-24 md:text-22 sm:text-20 xs:text-18 leading-tight text-[#111111] duration-450 hover:text-main-500 font-semibold mt-20 md:mt-15 group-hover/slide:text-main-500 group-hover/slide:hover:text-main-600"><?= $item->title ?></a>
                                                 <div class="editor-field mt-30 md:mt-20">
                                                     <div class="text-editor !max-w-full editor-p:text-18 editor-li:text-18 sm:editor-p:text-16 sm:editor-li:text-16 xs:editor-p:text-14 xs:editor-li:text-14 editor-p:font-light editor-p:text-[#111111] editor-p:hidden [&_*:first-child]:line-clamp-2 [&_*]:!mb-0">
                                                         <!-- Stylelar tasarımı yansıtmak adına eklenmiştir. / Backendde silinerek panel editörü üzerinden eklenmeli. -->
@@ -852,7 +852,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="button-field mt-30 md:mt-20 sm:hidden">
-                                                    <a href="single-blog.php" class="button group/button w-fit min-w-[200px] h-[50px] flex justify-center items-center px-[30px] rounded-full bg-transparent relative gap-[15px] duration-450 overflow-hidden before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-main-600 before:duration-450  hover:before:left-0 hover:shadow-[inset_0_0_0_1px_var(--main-600)] shadow-[inset_0_0_0_1px_rgba(17,17,17,0.15)] group-hover/slide:shadow-[inset_0_0_0_1px_var(--main-500)]">
+                                                    <a href="<?= env('HTTP_DOMAIN') . '/' . getUrl('blog_url') .'/'. $item->seo_url ?>" class="button group/button w-fit min-w-[200px] h-[50px] flex justify-center items-center px-[30px] rounded-full bg-transparent relative gap-[15px] duration-450 overflow-hidden before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-main-600 before:duration-450  hover:before:left-0 hover:shadow-[inset_0_0_0_1px_var(--main-600)] shadow-[inset_0_0_0_1px_rgba(17,17,17,0.15)] group-hover/slide:shadow-[inset_0_0_0_1px_var(--main-500)]">
                                                         <div class="text text-[15.18px] flex items-center text-[#111111] group-hover/slide:text-main-500 group-hover/slide:group-hover/button:text-white relative z-10 leading-tight duration-450 group-hover/button:text-white">View</div>
                                                         <div class="icon-arrow-right text-[16px] height-[16px] leading-none flex items-center text-[#111111] group-hover/slide:text-main-500 group-hover/slide:group-hover/button:text-white relative z-10 duration-450 group-hover/button:text-white group-hover/button:translate-x-[5px] rtl:-scale-x-100 rtl:group-hover/button:translate-x-[-5px]"></div>
                                                     </a>

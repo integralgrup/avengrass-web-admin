@@ -1,22 +1,22 @@
 <?php
 
 namespace App\Models;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class BlogSlider extends Model
+class ServiceImage extends Model
 {
+    use HasFactory, SoftDeletes;
 
-    protected $table = 'blog_slider';
-
-    protected $primaryKey = 'id';
+    protected $table = 'service_image';
 
     public $timestamps = false;
 
     protected $fillable = [
-        'slider_id',
-        'blog_id',
+        'service_id',
+        'image_id',
         'lang',
         'image',
         'alt',
@@ -28,5 +28,5 @@ class BlogSlider extends Model
         'created_at',
         'deleted_at',
     ];
-
+    
 }

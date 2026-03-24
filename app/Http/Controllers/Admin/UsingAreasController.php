@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\UsingAreas;
+use App\Models\UsingArea;
 use App\Models\Product;
 use App\Models\UsingAreasGallery;
 use App\Models\Language; // Assuming you have a Language model to fetch languages
@@ -25,7 +25,7 @@ class UsingAreasController extends Controller
     // Display a list of using areas
     public function index()
     {
-        $usingAreas = UsingAreas::where('lang', app()->getLocale())->get();
+        $usingAreas = UsingArea::where('lang', app()->getLocale())->get();
         return view('admin.using_areas.index', compact('usingAreas'));
     }
 
@@ -43,7 +43,7 @@ class UsingAreasController extends Controller
         if ($request->has('using_areas_id')) {
                 $using_areas_id = $request->using_areas_id; // Use the provided using_areas_id
             }else{
-                $using_areas_id = UsingAreas::max('using_areas_id') + 1; // Increment the maximum using_areas_id by 1
+                $using_areas_id = UsingArea::max('using_areas_id') + 1; // Increment the maximum using_areas_id by 1
                 if (!$using_areas_id) {
                     $using_areas_id = 1; // If no using areas exist, start with 1
                 }
@@ -95,7 +95,7 @@ class UsingAreasController extends Controller
                     'sort' => $request->input('sort_'.$language->lang_code) ?? $request->input('sort_en') ?? 0,
                 ];
 
-                UsingAreas::updateOrCreate(
+                UsingArea::updateOrCreate(
                     ['using_areas_id' => $using_areas_id, 'lang' => $language->lang_code],
                     $data
                 );
@@ -115,7 +115,7 @@ class UsingAreasController extends Controller
     public function edit($id)
     {
         $languages = Language::all();
-        $using_areas = UsingAreas::where('using_areas_id', $id)->get();
+        $using_areas = UsingArea::where('using_areas_id', $id)->get();
 
         return view('admin.using_areas.edit', compact('using_areas', 'languages'));
     }
@@ -125,7 +125,7 @@ class UsingAreasController extends Controller
     // Delete sector
     public function destroy($using_areas_id)
     {
-        $sector = UsingAreas::where('using_areas_id', $using_areas_id)->get();
+        $sector = UsingArea::where('using_areas_id', $using_areas_id)->get();
         // Also delete related gallery items if needed
         foreach ($sector as $item) {
             $item->gallery()->delete();
@@ -138,14 +138,14 @@ class UsingAreasController extends Controller
     // Project Gallery methods will go here
     public function galleryIndex($id)
     {
-        $using_areas = UsingAreas::where('using_areas_id', $id)->where('lang', app()->getLocale())->firstOrFail();
-        $gallery = UsingAreasGallery::where('using_areas_id', $id)->where('lang', app()->getLocale())->get();
+        $using_areas = UsingArea::where('using_area_id', $id)->where('lang', app()->getLocale())->firstOrFail();
+        $gallery = UsingAreasGallery::where('using_area_id', $id)->where('lang', app()->getLocale())->get();
         return view('admin.using_areas.gallery.index', compact('using_areas', 'gallery'));
     }
 
     public function galleryCreate($id)
     {
-        $using_areas = UsingAreas::findOrFail($id);
+        $using_areas = UsingArea::findOrFail($id);
         return view('admin.using_areas.gallery.create', compact('using_areas', 'id'));
     }
 
@@ -153,7 +153,7 @@ class UsingAreasController extends Controller
     {
         try {
 
-            $using_areas = UsingAreas::where('using_areas_id', $id)->where('lang', app()->getLocale())->firstOrFail();
+            $using_areas = UsingArea::where('using_areas_id', $id)->where('lang', app()->getLocale())->firstOrFail();
 
             if($request->has('image_id')){
                 $image_id = $request->image_id; // Use the provided image_id
@@ -209,7 +209,7 @@ class UsingAreasController extends Controller
 
     public function galleryEdit($id, $galleryId)
     {
-        $using_areas = UsingAreas::where('using_areas_id', $id)->where('lang', app()->getLocale())->firstOrFail();
+        $using_areas = UsingArea::where('using_areas_id', $id)->where('lang', app()->getLocale())->firstOrFail();
         $gallery = UsingAreasGallery::where('using_areas_id', $id)->where('image_id', $galleryId)->get();
         return view('admin.using_areas.gallery.edit', compact('using_areas', 'gallery'));
     }
