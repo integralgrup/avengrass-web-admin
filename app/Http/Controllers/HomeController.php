@@ -204,6 +204,17 @@ class HomeController extends Controller
             }
         }*/
 
+        /*$service_images_2 = Service::where('lang', $lang)->pluck('image_2')->toArray();
+        
+        foreach($service_images_2 as $image) {
+            if($image != null) {
+                if(file_exists('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/icerikler/' . $image)) {
+                    copy('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/icerikler/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/' . $lang . '/uploads/service/' . $image);
+                    echo "File {$image} copied successfully.<br>";
+                }
+            }
+        }*/
+
 
 
         /*

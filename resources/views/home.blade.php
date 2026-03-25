@@ -591,7 +591,7 @@
                                             </div>
                                             <div class="image-field relative translate-z-0 h-full rounded-[20px] overflow-hidden hidden sm:flex sm:mt-20">
                                                 <a href="<?= env('HTTP_DOMAIN') . '/' . getUrl('services_url') .'/'. $item->seo_url ?>" class="image flex w-full group/image group/popup relative h-full xs:h-250 sm:h-300 md:h-350 overflow-hidden cursor-pointer translate-z-0 duration-350 hover:scale-105" href="../assets/image/other/image-<?= $key + 1 ?>.jpg">
-                                                    <img src="<?= env('HTTP_DOMAIN').'/'. getFolder(['uploads_folder','service_images_folder'], $item->lang).'/'.$item->image ?>" class="full-cover duration-450" loading="lazy" alt="" data-swiper-parallax="50%">
+                                                    <img src="<?= env('HTTP_DOMAIN').'/'. getFolder(['uploads_folder','service_images_folder'], $item->lang).'/'.$item->image_2 ?>" class="full-cover duration-450" loading="lazy" alt="" data-swiper-parallax="50%">
                                                 </a>
                                             </div>
                                             <div class="button-field mt-30 sm:mt-20 sm:hidden">
@@ -617,7 +617,7 @@
                                     <div class="content relative h-full">
                                         <div class="image-field relative translate-z-0 h-full rounded-[20px] overflow-hidden">
                                             <a href="<?= env('HTTP_DOMAIN') . '/' . getUrl('services_url') .'/'. $item->seo_url ?>" class="image flex w-full group/image group/popup relative h-full xs:h-250 sm:h-300 md:h-350 overflow-hidden cursor-pointer translate-z-0 duration-350 hover:scale-105" href="../assets/image/other/image-<?= $key + 1 ?>.jpg">
-                                                <img src="<?= env('HTTP_DOMAIN').'/'. getFolder(['uploads_folder','service_images_folder'], $item->lang).'/'.$item->image ?>" class="full-cover duration-450" loading="lazy" alt="" data-swiper-parallax="50%">
+                                                <img src="<?= env('HTTP_DOMAIN').'/'. getFolder(['uploads_folder','service_images_folder'], $item->lang).'/'.$item->image_2 ?>" class="full-cover duration-450" loading="lazy" alt="" data-swiper-parallax="50%">
                                             </a>
                                         </div>
                                     </div>
