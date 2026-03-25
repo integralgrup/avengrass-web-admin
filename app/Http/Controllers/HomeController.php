@@ -58,147 +58,148 @@ class HomeController extends Controller
 
     public function image_copy() {
 
+    $lang = 'en';
 
-        /*$slider_images = Slider::where('lang', 'tr')->pluck('image')->toArray();
+        /*$slider_images = Slider::where('lang', $lang)->pluck('image')->toArray();
         foreach($slider_images as $image) {
-            if(file_exists('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/slayt/' . $image)) {
-                copy('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/slayt/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/tr/uploads/images/' . $image);
+            if(file_exists('/Applications/MAMP/htdocs/avengrass-'.$lang.'-files/resimler/slayt/' . $image)) {
+                copy('/Applications/MAMP/htdocs/avengrass-'.$lang.'-files/resimler/slayt/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/'.$lang.'/uploads/images/' . $image);
                 echo "File {$image} copied successfully.<br>";
             }
         }*/
 
-        //$menu_category_images = Menu::where('lang', 'tr')->pluck('image')->toArray();
+        /*$menu_category_images = Menu::where('lang', $lang)->pluck('image')->toArray();
         //dd($menu_images);
-        /*foreach($menu_category_images as $image) {
+        foreach($menu_category_images as $image) {
             if($image != null) {
-                if(file_exists('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/kategori/' . $image)) {
-                    copy('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/kategori/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/tr/uploads/product/' . $image);
+                if(file_exists('/Applications/MAMP/htdocs/avengrass-'.$lang.'-files/resimler/kategori/' . $image)) {
+                    copy('/Applications/MAMP/htdocs/avengrass-'.$lang.'-files/resimler/kategori/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/'.$lang.'/uploads/product/' . $image); //'/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/product/' . $image);
                     echo "File {$image} copied successfully.<br>";
                 }
-                if(file_exists('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/urunler/' . $image)) {
-                    copy('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/urunler/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/tr/uploads/product/' . $image);
+                if(file_exists('/Applications/MAMP/htdocs/avengrass-'.$lang.'-files/resimler/urunler/' . $image)) {
+                    copy('/Applications/MAMP/htdocs/avengrass-'.$lang.'-files/resimler/urunler/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/'.$lang.'/uploads/product/' . $image);
                     echo "File {$image} copied successfully.<br>";
                 }
             }
         }*/
-        /*$menu_category_icons_1 = Menu::where('lang', 'tr')->pluck('icon1')->toArray();
-        $menu_category_icons_2 = Menu::where('lang', 'tr')->pluck('icon2')->toArray();
+
+        /*$menu_category_icons_1 = Menu::where('lang', $lang)->pluck('icon1')->toArray();
+        $menu_category_icons_2 = Menu::where('lang', $lang)->pluck('icon2')->toArray();
         $menu_category_icons = array_merge($menu_category_icons_1, $menu_category_icons_2);
         //dd($menu_category_icons);
         foreach($menu_category_icons as $image) {
             if($image != null) {
-                if(file_exists('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/kategori/icon/' . $image)) {
-                    copy('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/kategori/icon/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/tr/uploads/product/' . $image);
+                if(file_exists('/Applications/MAMP/htdocs/avengrass-'.$lang.'-files/resimler/kategori/icon/' . $image)) {
+                    copy('/Applications/MAMP/htdocs/avengrass-'.$lang.'-files/resimler/kategori/icon/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/'.$lang.'/uploads/product/' . $image);
                     echo "File {$image} copied successfully.<br>";
                 }
             }
         }*/
 
-        /*$product_images = ProductImage::where('lang', 'tr')->pluck('image')->toArray();
+        /*$product_images = ProductImage::where('lang', $lang )->pluck('image')->toArray();
         foreach($product_images as $image) {
             if($image != null) {
-                if(file_exists('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/urunresim/' . $image)) {
-                    copy('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/urunresim/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/tr/uploads/product/' . $image);
+                if(file_exists('/Applications/MAMP/htdocs/avengrass-'.$lang.'-files/resimler/urunresim/' . $image)) {
+                    copy('/Applications/MAMP/htdocs/avengrass-'.$lang.'-files/resimler/urunresim/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/'.$lang.'/uploads/product/' . $image);
                     echo "File {$image} copied successfully.<br>";
                 }
             }
         }*/
 
-        /*$product_files = Product::where('lang', 'tr')->pluck('video_file')->toArray();
-        $product_files2 = Product::where('lang', 'tr')->pluck('pdf_file')->toArray();
+        /*$product_files = Product::where('lang', $lang)->pluck('video_file')->toArray();
+        $product_files2 = Product::where('lang', $lang)->pluck('pdf_file')->toArray();
         $product_files = array_merge($product_files, $product_files2);
         //dd($product_files);
-        foreach($product_files2 as $file) {
+        foreach($product_files as $file) {
             if($file != null) {
-                if(file_exists('/Applications/MAMP/htdocs/avengrass-tr-files/video/' . $file)) {
-                    copy('/Applications/MAMP/htdocs/avengrass-tr-files/video/' . $file, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/tr/uploads/product/' . $file);
+                if(file_exists('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/video/' . $file)) {
+                    copy('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/video/' . $file, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/' . $lang . '/uploads/product/' . $file);
                     echo "File {$file} copied successfully.<br>";
                 }
-                if(file_exists('/Applications/MAMP/htdocs/avengrass-tr-files/dosyalar/' . $file)) {
-                    copy('/Applications/MAMP/htdocs/avengrass-tr-files/dosyalar/' . $file, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/tr/uploads/product/' . $file);
+                if(file_exists('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/dosyalar/' . $file)) {
+                    copy('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/dosyalar/' . $file, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/' . $lang . '/uploads/product/' . $file);
                     echo "File {$file} copied successfully.<br>";
                 }
             }
         }*/
 
-        /*$product_icons = ProductFeature::where('lang', 'tr')->pluck('image')->toArray();
+        /*$product_icons = ProductFeature::where('lang', $lang)->pluck('image')->toArray();
         //dd($product_icons);
         foreach($product_icons as $image) {
             if($image != null) {
-                if(file_exists('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/ozellik/' . $image)) {
-                    copy('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/ozellik/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/tr/uploads/product/' . $image);
+                if(file_exists('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/ozellik/' . $image)) {
+                    copy('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/ozellik/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/' . $lang . '/uploads/product/' . $image);
                     echo "File {$image} copied successfully.<br>";
                 }
             }
         }*/
 
-        //$product_images = Product::where('lang', 'tr')->pluck('image')->toArray();
-        /*$product_features = Product::where('lang', 'tr')->pluck('features_image')->toArray();
-        //merge images 
-        //$images = array_merge($product_images, $product_features);
-        //dd($images);
-        //dd($products);
-        foreach($product_features as $image) {
-            if($image != null) {
-                if(file_exists('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/features/' . $image)) {
-                    copy('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/features/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/tr/uploads/product/' . $image);
-                    echo "File {$image} copied successfully.<br>";
-                }
-            }
-        }*/
+        
+        /*$product_features = Product::where('lang', $lang)->pluck('features_image')->toArray();
 
-        /*$product_features = ProductFeature2::where('lang', 'tr')->pluck('image')->toArray();
+        //dd($product_features);
         
         foreach($product_features as $image) {
             if($image != null) {
-                if(file_exists('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/features/alt/' . $image)) {
-                    copy('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/features/alt/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/tr/uploads/product/' . $image);
+                if(file_exists('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/urunler/' . $image)) {
+                    copy('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/urunler/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/' . $lang . '/uploads/product/' . $image);
                     echo "File {$image} copied successfully.<br>";
                 }
             }
         }*/
 
-        /*$using_areas = UsingArea::where('lang', 'tr')->pluck('image')->toArray();
+        /*$product_features = ProductFeature2::where('lang', $lang)->pluck('image')->toArray();
+        
+        foreach($product_features as $image) {
+            if($image != null) {
+                if(file_exists('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/features/alt/' . $image)) {
+                    copy('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/features/alt/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/' . $lang . '/uploads/product/' . $image);
+                    echo "File {$image} copied successfully.<br>";
+                }
+            }
+        }*/
+
+        /*$using_areas = UsingArea::where('lang', $lang)->pluck('image')->toArray();
 
         //dd($using_areas);
         
         foreach($using_areas as $image) {
             if($image != null) {
-                if(file_exists('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/kullanimalanlari/' . $image)) {
-                    copy('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/kullanimalanlari/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/tr/uploads/using_area/' . $image);
+                if(file_exists('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/kullanimalanlari/' . $image)) {
+                    copy('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/kullanimalanlari/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/' . $lang . '/uploads/using_area/' . $image);
                     echo "File {$image} copied successfully.<br>";
                 }
             }
         }*/
 
-        /*$using_area_gallery = UsingAreasGallery::where('lang', 'tr')->pluck('image')->toArray();
+        /*$using_area_gallery = UsingAreasGallery::where('lang', $lang)->pluck('image')->toArray();
 
         //dd($using_area_gallery);
         
         foreach($using_area_gallery as $image) {
             if($image != null) {
-                if(file_exists('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/kullanimalanlariresim/' . $image)) {
-                    copy('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/kullanimalanlariresim/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/tr/uploads/using_area/' . $image);
+                if(file_exists('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/kullanimalanlariresim/' . $image)) {
+                    copy('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/kullanimalanlariresim/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/' . $lang . '/uploads/using_area/' . $image);
                     echo "File {$image} copied successfully.<br>";
                 }
             }
         }*/
 
-        /*$service_images = ServiceImage::where('lang', 'tr')->pluck('image')->toArray();
+        /*$service_images = ServiceImage::where('lang', $lang)->pluck('image')->toArray();
 
         //dd($service_images);
         
         foreach($service_images as $image) {
             if($image != null) {
-                if(file_exists('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/icerikresim/' . $image)) {
-                    copy('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/icerikresim/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/tr/uploads/service/' . $image);
+                if(file_exists('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/icerikresim/' . $image)) {
+                    copy('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/icerikresim/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/' . $lang . '/uploads/service/' . $image);
                     echo "File {$image} copied successfully.<br>";
                 }
             }
         }*/
 
 
-        /*$project_images = Project::where('lang', 'tr')->pluck('image')->toArray();
+        /*$project_images = Project::where('lang', $lang)->pluck('image')->toArray();
         $project_images2 = ProjectGallery::where('lang', 'tr')->pluck('image')->toArray();
 
         $merged_images = array_merge($project_images, $project_images2);
@@ -207,32 +208,32 @@ class HomeController extends Controller
         
         foreach($merged_images as $image) {
             if($image != null) {
-                if(file_exists('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/projeler/' . $image)) {
-                    copy('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/projeler/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/tr/uploads/project/' . $image);
+                if(file_exists('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/projeler/' . $image)) {
+                    copy('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/projeler/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/' . $lang . '/uploads/project/' . $image);
                     echo "File {$image} copied successfully.<br>";
                 }
-                if(file_exists('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/projeresim/' . $image)) {
-                    copy('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/projeresim/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/tr/uploads/project/' . $image);
+                if(file_exists('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/projeresim/' . $image)) {
+                    copy('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/projeresim/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/' . $lang . '/uploads/project/' . $image);
                     echo "File {$image} copied successfully.<br>";
                 }
             }
         }*/
 
 
-        /*$blog_images = Blog::where('lang', 'tr')->pluck('image')->toArray();
-        $blog_slider = BlogSlider::where('lang', 'tr')->pluck('image')->toArray();
+        /*$blog_images = Blog::where('lang', $lang)->pluck('image')->toArray();
+        $blog_slider = BlogSlider::where('lang', $lang)->pluck('image')->toArray();
         $blog_images = array_merge($blog_images, $blog_slider);
 
         //dd($blog_images);
 
         foreach($blog_images as $image) {
             if($image != null) {
-                if(file_exists('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/icerikler/' . $image)) {
-                    copy('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/icerikler/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/tr/uploads/blog/' . $image);
+                if(file_exists('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/icerikler/' . $image)) {
+                    copy('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/icerikler/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/' . $lang . '/uploads/blog/' . $image);
                     echo "File {$image} copied successfully.<br>";
                 }
-                if(file_exists('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/icerikresim/' . $image)) {
-                    copy('/Applications/MAMP/htdocs/avengrass-tr-files/resimler/icerikresim/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/tr/uploads/blog/' . $image);
+                if(file_exists('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/icerikresim/' . $image)) {
+                    copy('/Applications/MAMP/htdocs/avengrass-' . $lang . '-files/resimler/icerikresim/' . $image, '/Applications/MAMP/htdocs/avengrass-web-admin/public/uploads/' . $lang . '/uploads/blog/' . $image);
                     echo "File {$image} copied successfully.<br>";
                 }
             }
@@ -289,7 +290,6 @@ class HomeController extends Controller
         }
 
         $menu = Menu::where(['seo_url' => $slug, 'lang' => app()->getLocale()])->firstOrFail();
-
         //dd($menu);
         
         // If the menu item has a page_type of 'about', fetch the about data
@@ -310,11 +310,9 @@ class HomeController extends Controller
 
         if($menu->page_type == 'product') {
             $product = Product::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->with(['category', 'faqs', 'types','gallery', 'images','features','features2'])->firstOrFail();
-            //$features = ProductFeature::where(['lang' => app()->getLocale()])->orderBy('sort')->get();
             if($product) {
                 $seo = $product;
-                //dd($features);
-                //dd($product);
+                
                 return view('product', compact('product', 'seo'));
             } else {
 

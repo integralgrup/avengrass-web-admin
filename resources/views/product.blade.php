@@ -4,6 +4,7 @@
 <?php 
 $pageTitle = $product->title;
 $breadcrumbTitle = $product->title;
+
 ?>
 <?php $code = \App\Models\Code::where('lang', app()->getLocale())->first(); ?>
 
@@ -56,7 +57,7 @@ $breadcrumbTitle = $product->title;
                                     </li>
                                     <li>
                                         <a href="page-sport-grass.php" class="flex group">
-                                            <p class="text text-[#B1B1B1] text-18 md:text-16 font-light group-hover:text-main-500 duration-450 leading-tight">{{$product->category->title}}</p>
+                                            <p class="text text-[#B1B1B1] text-18 md:text-16 font-light group-hover:text-main-500 duration-450 leading-tight"></p>
                                         </a>
                                     </li>
                                     <li class="split relative flex items-center h-[12px]">
