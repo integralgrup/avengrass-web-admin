@@ -362,7 +362,7 @@
                                     <li class="group/language-li relative">
                                         <a href="javascript:;" class="language group/language flex items-center gap-10 opacity-50 duration-450 [&.active]:opacity-100 active">
                                             <i class="icon icon-earth text-[18px] h-[18px] block leading-none duration-450 text-main-500 group-hover/language-li:text-main-500"></i>
-                                            <span class="text text-16 text-[#111111] leading-tight duration-450 group-hover/language-li:text-main-500 font-light">TR</span>
+                                            <span class="text text-16 text-[#111111] leading-tight duration-450 group-hover/language-li:text-main-500 font-light">{{ strtoupper(app()->getLocale()) }}</span>
                                             <i class="icon icon-chevron-bottom text-[8px] h-[8px] block leading-none duration-450 text-[#111111] group-hover/language-li:text-main-500 group-hover/language-li:rotate-180"></i>
                                         </a>
                                         <div class="language-menu absolute top-[calc(100%+50px)] left-1/2 -translate-x-1/2 translate-y-20 opacity-0 invisible duration-450 group-hover/language-li:translate-y-0 group-hover/language-li:opacity-100 group-hover/language-li:visible pointer-events-none group-hover/language-li:pointer-events-auto before:absolute before:left-0 before:w-full before:h-[calc(50px+20px)] before:-top-[calc(50px+20px)] before:bg-transparent before:duration-450 group-hover/language-li:before:h-[calc(50px)] group-hover/language-li:before:-top-[calc(50px)]">
@@ -429,7 +429,7 @@
                                                     <a href="{{$url}}" class="language group/language flex items-center gap-10 duration-450 [&.active]:opacity-100">
                                                         <div class="icon">
                                                             <div class="image h-20 w-20 overflow-hidden translate-z-0 rounded-full">
-                                                                <img src="<?= $language->flag ?>" class="full-cover" loading="lazy" alt="">
+                                                                <img src="<?= $language->domain  .'/'. getFolder(['uploads_folder', 'images_folder'], $language->lang_code) .'/'. $language->flag_image?>" class="full-cover" loading="lazy" alt="">
                                                             </div>
                                                         </div>
                                                         <span class="text text-16 text-[#111111] leading-tight duration-450 group-hover/language:text-main-500">{{ strtoupper($language->lang_code ) }}</span>
