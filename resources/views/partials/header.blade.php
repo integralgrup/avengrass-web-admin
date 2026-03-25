@@ -242,7 +242,7 @@
 
                                     <li class="menu-item group/menu-item lg:relative has-mega-menu">
                                         <a href="<?=env('HTTP_DOMAIN') . '/' . getUrl('using_areas_url')  ?>" class="group/showable flex items-center ltr:gap-10 lg:ltr:gap-0 lg:px-30 lg:py-15 lg:border-0 lg:border-b lg:border-solid lg:border-black/10 duration-450 [&.is-show]:bg-main-500">
-                                            <span class="text text-[#1A1A1A] text-16 sm:text-16 leading-tight duration-450 group-hover/menu-item:text-main-500 font-light lg:font-normal group-[&.is-show]/showable:text-white">Using Areas</span>
+                                            <span class="text text-[#1A1A1A] text-16 sm:text-16 leading-tight duration-450 group-hover/menu-item:text-main-500 font-light lg:font-normal group-[&.is-show]/showable:text-white"><?= $item->title ?></span>
                                             <i class="icon icon-chevron-bottom text-[#1A1A1A] text-[10px] h-[10px] leading-none duration-450 hidden group-hover/menu-item:rotate-180 group-hover/menu-item:text-main-500 group-[&.has-mega-menu]/menu-item:block lg:hidden lg:group-[&.has-mega-menu]/menu-item:hidden rtl:mr-10 lg:rtl:mr-0"></i>
                                         </a>
                                         <div class="sub-trigger group/sub-trigger absolute right-90 top-[11px] w-30 h-30 bg-main-500 justify-center items-center hidden cursor-pointer rounded-default duration-450 [&.is-active]:bg-main-300 lg:group-[&.has-mega-menu]/menu-item:flex z-20 rtl:left-[20px] rtl:right-auto">
