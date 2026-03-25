@@ -312,7 +312,7 @@ class HomeController extends Controller
             $product = Product::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->with(['category', 'faqs', 'types','gallery', 'images','features','features2'])->firstOrFail();
             if($product) {
                 $seo = $product;
-                
+                //dd($seo);
                 return view('product', compact('product', 'seo'));
             } else {
 
