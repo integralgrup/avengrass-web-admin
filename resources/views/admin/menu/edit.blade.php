@@ -54,7 +54,7 @@
                     <?php 
                         foreach($menu_items as $menu){
                             $menu_id = $menu->menu_id;
-                            $parent_menu_id = $menu->parent_menu_id;
+                            $parent_menu_id[$menu->lang] = $menu->parent_menu_id;
                             $title[$menu->lang] = $menu->title;
                             $seo_url[$menu->lang] = $menu->seo_url;
                             $image[$menu->lang] = $menu->image;
@@ -64,7 +64,8 @@
                             $sort[$menu->lang] = $menu->sort;
                         }
 
-                        //dd($title);
+                        //dd($menu_items);
+                        //dd($parentMenus);
                     ?>
                     <div class="card-body">
                         <form action="{{ route('admin.menu.store') }}" method="POST" enctype="multipart/form-data">
@@ -98,11 +99,19 @@
                                             <select name="parent_menu_id_{{$language->lang_code}}" id="parent_menu_id_{{$language->lang_code}}" class="form-select">
                                                 <option value="0">Seçiniz</option>
                                                 @foreach($parentMenus as $parentMenu)
-                                                    <option value="{{ $parentMenu->menu_id }}" {{ $parentMenu->menu_id == $parent_menu_id ? 'selected' : '' }}>{{ $parentMenu->title }}</option>
-                                                    @if($parentMenu->children)
-                                                        @foreach($parentMenu->children as $childMenu)
-                                                            <option value="{{ $childMenu->menu_id }}" {{ $childMenu->menu_id == $parent_menu_id ? 'selected' : '' }}>-- {{ $childMenu->title }}</option>
-                                                        @endforeach
+                                                    <option value="{{ $parentMenu->menu_id }}" {{ $parentMenu->menu_id == $parent_menu_id[$language->lang_code] ? 'selected' : '' }}>{{ $parentMenu->title }}</option>
+                                                    @if($type == 'footer')
+                                                        @if($parentMenu->children_footer)
+                                                            @foreach($parentMenu->children_footer as $childMenu)
+                                                                <option value="{{ $childMenu->menu_id }}" {{ $childMenu->menu_id == $parent_menu_id[$language->lang_code] ? 'selected' : '' }}>-- {{ $childMenu->title }}</option>
+                                                            @endforeach
+                                                        @endif
+                                                    @else
+                                                        @if($parentMenu->children)
+                                                            @foreach($parentMenu->children as $childMenu)
+                                                                <option value="{{ $childMenu->menu_id }}" {{ $childMenu->menu_id == $parent_menu_id[$language->lang_code] ? 'selected' : '' }}>-- {{ $childMenu->title }}</option>
+                                                            @endforeach
+                                                        @endif
                                                     @endif
                                                 @endforeach
                                             </select>

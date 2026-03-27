@@ -325,26 +325,36 @@ class HomeController extends Controller
             return view('about', compact('about','blogs',  'certificates',  'brands', 'seo'));
         }
 
-        if($menu->page_type == 'product') {
-            $product = Product::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->with(['category', 'faqs', 'types','gallery', 'images','features','features2'])->firstOrFail();
-            if($product) {
-                $seo = $product;
-                //dd($seo);
-                return view('product', compact('product', 'seo'));
-            } else {
+        if($menu->page_type == 'product_category') {
 
-            
-                $category = ProductCategory::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->first();
-                $categories = ProductCategory::where('lang', app()->getLocale())->with('product')->get();
+            if($slug2 != null) {
+                $product = Product::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->with(['category', 'faqs', 'types','gallery', 'images','features','features2'])->firstOrFail();
+                if($product) {
+                    $seo = $product;
+                    //dd($seo);
+                    return view('product', compact('product', 'seo'));
+                } else {
+                    $category = ProductCategory::where(['seo_url' => $slug2, 'lang' => app()->getLocale()])->first();
+                    $categories = ProductCategory::where('lang', app()->getLocale())->where('parent_category_id', 0)->with('children')->get();
+                    //dd($category);
+                    $products = Product::where(['lang' => app()->getLocale(), 'category_id' => $category->category_id])->with(['images', 'category'])->get();
+                    //dd($products);
+                    $seo = SeoSettings::where('page', 'product_category')->where('lang', app()->getLocale())->first();
+                    return view('product_category', compact('category', 'categories', 'products', 'menu', 'seo'));
+
+                }
+            }else{
+                $category = ProductCategory::where(['seo_url' => $slug, 'lang' => app()->getLocale()])->first();
+                    $categories = ProductCategory::where('lang', app()->getLocale())->where('parent_category_id', 0)->with('children')->get();
                 //dd($category);
                 $products = Product::where(['lang' => app()->getLocale(), 'category_id' => $category->category_id])->with(['images', 'category'])->get();
                 //dd($products);
                 $seo = SeoSettings::where('page', 'product_category')->where('lang', app()->getLocale())->first();
                 return view('product_category', compact('category', 'categories', 'products', 'menu', 'seo'));
-
             }
+            
         }
-
+        
         if($menu->page_type == 'services') {
             if($slug2 == null) {
                 $services = Service::where(['lang' => app()->getLocale()])->get();

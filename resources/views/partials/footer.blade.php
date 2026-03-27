@@ -90,6 +90,15 @@
                                 </li>
                             </ul>
                         </div>
+                        <?php 
+                            $footer_menu = App\Models\Menu::where(['lang' => app()->getLocale(), 'menu_type' => 'footer'])->with('children_footer')
+                            ->where('parent_menu_id', 0) // only root menus
+                            ->orderBy('sort', 'asc')
+                            ->get();
+                            //dd($menu);
+                        ?>
+                        <?php $footerInfo = \App\Models\FooterInfo::where('lang' , app()->getLocale())->first(); ?>
+                        <?php $offices = \App\Models\Office::where('lang' , app()->getLocale())->get(); ?>
                         <div class="social-media mt-60 xl:mt-50 lg:mt-40 md:mt-30 sm:mt-20">
                             <ul class="flex items-center [&_li:last-child_.split]:hidden flex-wrap gap-[20px] sm:gap-[15px]">
                                 <li class="flex relative">
@@ -178,67 +187,7 @@
                     </div>
                     <div class="footer-menu-field col-start-3 xl:col-start-2 lg:col-start-1 sm:hidden">
                         <div class="footer-menu-wrapper grid grid-cols-3 gap-[30px] gap-y-[80px] md:gap-0 xl:grid-cols-2 md:grid-cols-1">
-                            <?php $list = [
-                                [
-                                    'title' => 'Services',
-                                    'fms' => [
-                                        ['text' => 'Football Pitch', 'link' => 'single-service.php'],
-                                        ['text' => 'Soccer Pitch', 'link' => 'single-service.php'],
-                                        ['text' => 'Multipurpose Fields', 'link' => 'single-service.php'],
-                                        ['text' => 'Tennis Courts', 'link' => 'single-service.php'],
-                                        ['text' => 'Padel', 'link' => 'single-service.php'],
-                                    ],
-                                ],
-                                [
-                                    'title' => 'Using Areas',
-                                    'fms' => [
-                                        ['text' => 'Design', 'link' => 'single-service.php'],
-                                        ['text' => 'Installation', 'link' => 'single-service.php'],
-                                        ['text' => 'Maintenance', 'link' => 'single-service.php'],
-                                        ['text' => 'Turnkey Projects', 'link' => 'single-service.php'],
-                                        ['text' => 'Renovations', 'link' => 'single-service.php'],
-                                    ],
-                                ],
-                                [
-                                    'title' => 'Sport Grass',
-                                    'fms' => [
-                                        ['text' => 'Football Pitch', 'link' => 'single-service.php'],
-                                        ['text' => 'Soccer Pitch', 'link' => 'single-service.php'],
-                                        ['text' => 'Multipurpose Fields', 'link' => 'single-service.php'],
-                                        ['text' => 'Tennis Courts', 'link' => 'single-service.php'],
-                                        ['text' => 'Padel', 'link' => 'single-service.php'],
-                                    ],
-                                ],
-                                [
-                                    'title' => 'Company',
-                                    'fms' => [
-                                        ['text' => 'Who We Are', 'link' => 'page-who-we-are.php'],
-                                        ['text' => 'What We Are Doing ?', 'link' => 'page-what-we-are-doing.php'],
-                                        ['text' => 'Certificates', 'link' => 'page-certificates.php'],
-                                        ['text' => 'Privacy Policy', 'link' => 'page.php'],
-                                        ['text' => 'GPDR', 'link' => 'page.php'],
-                                    ],
-                                ],
-                                [
-                                    'title' => 'Project',
-                                    'fms' => [
-                                        ['text' => 'Kıbrıs Padel Cort', 'link' => 'single-project.php'],
-                                        ['text' => 'Rwanda Nizami Saha', 'link' => 'single-project.php'],
-                                        ['text' => 'Kongo Goma', 'link' => 'single-project.php'],
-                                        ['text' => 'Kongo Bunya', 'link' => 'single-project.php'],
-                                    ],
-                                ],
-                                [
-                                    'title' => 'Landspace Grass',
-                                    'fms' => [
-                                        ['text' => 'Garden Grass', 'link' => 'single-project.php'],
-                                        ['text' => 'Playground Grass', 'link' => 'single-project.php'],
-                                        ['text' => 'Decorative Grass', 'link' => 'single-project.php'],
-                                    ],
-                                ],
-                            ]; ?>
-
-                            <?php foreach ($list as $key => $item) : ?>
+                            <?php foreach ($footer_menu as $key => $item) : ?>
                                 <div class="footer-accordion fms group/fms md:relative md:pb-[15px] md:mb-[15px]">
                                     <div class="split w-full h-1 bg-black/10 absolute left-0 bottom-0 hidden md:block"></div>
                                     <div class="footer-title-trigger group/ftt title-field relative md:cursor-pointer">
@@ -249,11 +198,22 @@
                                         </div>
                                     </div>
                                     <ul class="footer-accordion-item space-y-[20px] mt-[30px] sm:mt-[20px] md:space-y-0 md:hidden [&_li:last-child_.split]:hidden [&_li:last-child]:!mb-0 [&_li:last-child]:pb-0 md:pl-10 md:mt-20">
-                                        <?php foreach ($item['fms'] as $key => $fms) : ?>
+                                        <?php foreach ($item->children_footer as $key => $child) : ?>
+                                            @if($child->page_type == 'product_category')
+                                                <?php $childUrl = env('HTTP_DOMAIN') .'/'. $child['seo_url'] ?>
+                                            @elseif($child->page_type == 'services')
+                                                <?php $childUrl = env('HTTP_DOMAIN') .'/'. $item['seo_url'] .'/'. $child['seo_url'] ?>
+                                            @elseif($child->page_type == 'using_areas')
+                                                <?php $childUrl = env('HTTP_DOMAIN') .'/'. $item['seo_url'] .'/'. $child['seo_url'] ?>
+                                            @elseif($child->page_type == 'page')
+                                                <?php $childUrl = env('HTTP_DOMAIN') .'/'. $child['seo_url'] ?>
+                                            @else
+                                                <?php $childUrl = 'javascript:;' ?>
+                                            @endif
                                             <li class="md:relative md:pb-[10px] md:!mb-[10px]">
                                                 <div class="split w-full h-1 bg-black/10 absolute left-0 bottom-0 hidden md:block"></div>
-                                                <a href="<?= $fms['link'] ?>" class="inline-flex group/link gap-[20px]">
-                                                    <span class="text text-16 sm:text-14 font-light text-[#111111] leading-tight duration-450 group-hover/link:text-main-500 group-hover/link:translate-x-[5px]"><?= $fms['text'] ?></span>
+                                                <a href="<?= $childUrl ?>" class="inline-flex group/link gap-[20px]">
+                                                    <span class="text text-16 sm:text-14 font-light text-[#111111] leading-tight duration-450 group-hover/link:text-main-500 group-hover/link:translate-x-[5px]"><?= $child['title'] ?></span>
                                                     <i class="icon icon-arrow-right text-[18px] h-[18px] text-main-500 block leading-none duration-450 group-hover/link:translate-x-[5px] scale-0 group-hover/link:scale-100 rtl:scale-x-[-1] rtl:group-hover/link:-scale-100"></i>
                                                 </a>
                                             </li>

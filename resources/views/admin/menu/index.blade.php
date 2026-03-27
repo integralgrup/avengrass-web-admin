@@ -62,7 +62,7 @@
                             {{ $menu->menu_type }}
                           </td>
                           <td>
-                            <a href="{{ route('admin.menu.edit', $menu->menu_id) }}" class="btn btn-primary btn-sm">Düzenle</a>
+                            <a href="{{ route('admin.menu.edit', $menu->menu_id) }}?type={{$type}}" class="btn btn-primary btn-sm">Düzenle</a>
                             <form action="{{ route('admin.menu.destroy', $menu->menu_id) }}" method="POST" style="display:inline;">
                               @csrf
                               @method('DELETE')
@@ -70,8 +70,9 @@
                             </form>
                           </td>
                         </tr>
-                        @if($menu->children)
-                            @foreach($menu->children as $child)
+                        <?php $children = ($type == 'footer') ? $menu->children_footer : $menu->children; ?>
+                        @if($children->count() > 0)
+                            @foreach($children as $child)
                                 <tr  data-id="{{$child->menu_id}}" class="child-row">
                                   <td>
                                     <i class="bi bi-list"></i>
@@ -82,7 +83,7 @@
                                     {{ $child->menu_type }}
                                   </td>
                                   <td>
-                                    <a href="{{ route('admin.menu.edit', $child->menu_id) }}" class="btn btn-primary btn-sm">Düzenle</a>
+                                    <a href="{{ route('admin.menu.edit', $child->menu_id) }}?type={{$type}}" class="btn btn-primary btn-sm">Düzenle</a>
                                     <form action="{{ route('admin.menu.destroy', $child->menu_id) }}" method="POST" style="display:inline;">
                                       @csrf
                                       @method('DELETE')
@@ -90,8 +91,9 @@
                                     </form>
                                   </td>
                                 </tr>
-                                @if($child->children)
-                                    @foreach($child->children as $subChild)
+                                <?php $child_children = ($type == 'footer') ? $child->children_footer : $child->children; ?>
+                                @if($child_children->count() > 0)
+                                    @foreach($child_children as $subChild)
                                         <tr  data-id="{{$subChild->menu_id}}" class="subchild-row">
                                           <td>
                                             <i class="bi bi-list"></i>
@@ -102,7 +104,7 @@
                                             {{ $subChild->menu_type }}
                                           </td>
                                           <td>
-                                            <a href="{{ route('admin.menu.edit', $subChild->menu_id) }}" class="btn btn-primary btn-sm">Düzenle</a>
+                                            <a href="{{ route('admin.menu.edit', $subChild->menu_id) }}?type={{$type}}" class="btn btn-primary btn-sm">Düzenle</a>
                                             <form action="{{ route('admin.menu.destroy', $subChild->menu_id) }}" method="POST" style="display:inline;">
                                               @csrf
                                               @method('DELETE')
