@@ -116,7 +116,7 @@
                             ->where('parent_menu_id', 0) // only root menus
                             ->orderBy('sort', 'asc')
                             ->get();
-                            //dd($menu);
+                            dd($menu);
                         ?>
                         <div class="menu">
                             <ul class="menu-ul flex gap-30 xl:gap-20 lg:flex-col lg:gap-0 lg:absolute lg:top-full lg:left-0 lg:w-full lg:bg-white lg:hidden [&.is-active]:block lg:border-0 lg:border-t lg:border-solid lg:border-black/10 scrollbar scrollbar-w-[5px] scrollbar-track-rounded-[5px] scrollbar-thumb-rounded-[5px] scrollbar-thumb-main-500 scrollbar-track-main-500/10 overflow-x-hidden overflow-y-auto min-xl:max-h-[calc(100vh-130px)]">
