@@ -291,7 +291,7 @@
                                                     </div>
                                                     <div class="image-field flex items-center lg:hidden">
                                                         <a href="javascript:;" class="mega-menu-image-field image group/image overflow-hidden translate-z-0 h-win-header w-full rounded-20 h-[500px] max-h-[500px]">
-                                                            <img src="<?= env('HTTP_DOMAIN') .'/' . getFolder(['uploads_folder', 'product_images_folder'], $childItem->lang) .'/' . $childItem->image ?>" class="full-cover duration-450 [&.is-active]:opacity-0 [&.is-active]:scale-110 group-hover/image:scale-110" loading="lazy" alt="">
+                                                            <img src="<?= env('HTTP_DOMAIN') .'/' . getFolder(['uploads_folder', 'product_images_folder'], $item->lang) .'/' . $item->image ?>" class="full-cover duration-450 [&.is-active]:opacity-0 [&.is-active]:scale-110 group-hover/image:scale-110" loading="lazy" alt="">
                                                         </a>
                                                     </div>
                                                 </div>
