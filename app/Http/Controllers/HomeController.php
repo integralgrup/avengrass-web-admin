@@ -50,26 +50,8 @@ class HomeController extends Controller
             $imagesByTitle[$image->title] = $image;
         }
 
-        $locale = strtolower(app()->getLocale());
-
-        $menu = Menu::where('lang', $locale)
-            ->where('menu_type', 'header')
-            ->where(function ($q) {
-                $q->where('parent_menu_id', 0)
-                ->orWhereNull('parent_menu_id');
-            })
-            ->with(['children' => function ($q) use ($locale) {
-                $q->where('lang', $locale)
-                ->where('menu_type', 'header')
-                ->orderBy('sort');
-                
-            }])
-            ->orderBy('sort')
-            ->get();
-
 
         view()->share('static_images', $imagesByTitle);
-        view()->share('menu', $menu);
 
         //dd($imagesByTitle);
     }
@@ -285,7 +267,9 @@ class HomeController extends Controller
     public function index()
     {
 
-    $locale = strtolower(app()->getLocale());
+        $menu = Menu::where(['parent_menu_id' => 0, 'lang' => app()->getLocale()])->with('children')->orderBy('sort', 'asc')->get();
+
+        dd($menu);
 
         $sliders = Slider::where('lang', app()->getLocale())->get();
         $languages = Language::all();
