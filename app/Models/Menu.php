@@ -56,10 +56,12 @@ class Menu extends Model
 
     public function children()
     {
-        return $this->hasMany(Menu::class, 'parent_menu_id', 'menu_id')
+        /*return $this->hasMany(Menu::class, 'parent_menu_id', 'menu_id')
             ->where('lang', app()->getLocale())
             ->where('menu_type', 'header')
-            ->with('children')->orderBy('sort'); // recursive eager loading
+            ->with('children')->orderBy('sort'); // recursive eager loading*/ 
+        return $this->hasMany(Menu::class, 'parent_menu_id', 'menu_id')
+        ->orderBy('sort');
     }
 
     public function children_footer()
