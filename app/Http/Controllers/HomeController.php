@@ -267,10 +267,6 @@ class HomeController extends Controller
     public function index()
     {
 
-        $menu = Menu::where(['parent_menu_id' => 0, 'lang' => app()->getLocale(), 'menu_type' => 'header'])->with('children')->orderBy('sort', 'asc')->get();
-
-        dd($menu);
-
         $sliders = Slider::where('lang', app()->getLocale())->get();
         $languages = Language::all();
         $about = About::where('lang', app()->getLocale())->first();
