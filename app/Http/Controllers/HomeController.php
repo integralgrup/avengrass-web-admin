@@ -267,7 +267,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $menu = Menu::where(['parent_menu_id' => 0, 'lang' => app()->getLocale()])->with('children')->orderBy('sort', 'asc')->get();
+        $menu = Menu::where(['parent_menu_id' => 0, 'lang' => app()->getLocale(), 'menu_type' => 'header'])->with('children')->orderBy('sort', 'asc')->get();
 
         dd($menu);
 
