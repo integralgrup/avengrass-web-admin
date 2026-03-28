@@ -43,7 +43,7 @@
                                                 <li>
                                                     <a href="javascript:;" class="group/link flex items-center relative ltr:space-x-[20px]">
                                                         <i class="icon icon-mail text-[18px] h-[18px] text-main-500 block leading-none group-hover/link:scale-110 duration-450 rtl:ml-20"></i>
-                                                        <span class="text text-[18px] sm:text-[16px] text-[#111111] font-light leading-tight group-hover/link:text-main-500 group-hover/link:translate-x-[4px] duration-450">info@avengrass.com</span>
+                                                        <span class="text text-[18px] sm:text-[16px] text-[#111111] font-light leading-tight group-hover/link:text-main-500 group-hover/link:translate-x-[4px] duration-450"></span>
                                                     </a>
                                                 </li>
                                                 <li>
