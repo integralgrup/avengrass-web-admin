@@ -25,11 +25,11 @@
                         </div>
                         <!-- OFFICE LIST -->
                         <ul class="[&_.office-box:last-child_.split]:hidden [&_.office-box:has(+.hoverable)_.split]:opacity-0">
-
-                            <?php foreach ($list as $key => $item) : ?>
+                        <?php $locationsInfo = $offices;?>
+                            <?php foreach ($locationsInfo as $key => $item) : ?>
                                 <div class="office-box item group/item relative cursor-pointer">
                                     <div class="top-field">
-                                        <p class="title text-[#111111]/65 text-28 lg:text-24 md:text-20 sm:text-18 xs:text-16 font-semibold leading-tight duration-450 group-[&.is-active]/item:text-main-500 group-hover/item:text-main-500"><?= $item['office-name'] ?></p>
+                                        <p class="title text-[#111111]/65 text-28 lg:text-24 md:text-20 sm:text-18 xs:text-16 font-semibold leading-tight duration-450 group-[&.is-active]/item:text-main-500 group-hover/item:text-main-500"><?= $item->title ?></p>
                                     </div>
                                     <div class="bottom-field h-0 duration-450 overflow-hidden">
                                         <div class="informations mt-50 mb-20 sm:mb-0 md:mt-30">
@@ -37,7 +37,7 @@
                                                 <li>
                                                     <a href="javascript:;" class="group/link flex items-center relative ltr:space-x-[20px]">
                                                         <i class="icon icon-phone text-[18px] h-[18px] text-main-500 block leading-none group-hover/link:scale-110 duration-450 rtl:ml-20"></i>
-                                                        <span class="text text-[18px] sm:text-[16px] text-[#111111] font-light leading-tight group-hover/link:text-main-500 group-hover/link:translate-x-[4px] duration-450">+90 (212) 678 13 13</span>
+                                                        <span class="text text-[18px] sm:text-[16px] text-[#111111] font-light leading-tight group-hover/link:text-main-500 group-hover/link:translate-x-[4px] duration-450"><?=$item->phone?></span>
                                                     </a>
                                                 </li>
                                                 <li>
@@ -49,7 +49,7 @@
                                                 <li>
                                                     <a href="javascript:;" class="group/link flex items-center relative ltr:space-x-[20px]">
                                                         <i class="icon icon-location text-[18px] h-[18px] text-main-500 block leading-none group-hover/link:scale-110 duration-450 rtl:ml-20"></i>
-                                                        <span class="text text-[18px] sm:text-[16px] text-[#111111] font-light leading-tight group-hover/link:text-main-500 group-hover/link:translate-x-[4px] duration-450 md:[&_br]:hidden">IOSB Bedrettin Dalan Bulvarı<br> Metro 34 Plaza No: 23/100<br> Başakşehir – Istanbul / TURKEY</span>
+                                                        <span class="text text-[18px] sm:text-[16px] text-[#111111] font-light leading-tight group-hover/link:text-main-500 group-hover/link:translate-x-[4px] duration-450 md:[&_br]:hidden"><?=$item->address?></span>
                                                     </a>
                                                 </li>
                                                 <li class="hidden md:block">
@@ -130,89 +130,27 @@
 
 <script>
     // Location List
-    window.locations = [{
-            latLng: {
-                lat: 41.0242476,
-                lng: 28.9701656
+    window.locations = [
+        <?php foreach ($locationsInfo as $key => $item): ?>
+            {
+                latLng: {
+                    lat: 41.0242476,
+                    lng: 28.9701656
+                },
+                zoom: 17,
+                url: '<?=$item->map_url?>',
+                marker: `<div class="inner w-[100px] h-[100px] sm:w-[40px] sm:h-[40px] duration-350 flex-center group/marker">
+                    <div class="image aspect-[50/50] max-w-[50px] md:aspect-square md:max-w-[50px] w-full overflow-hidden translate-z-0">
+                        <img src="../assets/image/other/favicon.png" class="full-cover" loading="lazy" alt="">
+                    </div>
+                    <div class="text-field flex items-center px-[25px] py-[17.5px] bg-main-500 rounded-full absolute top-full left-1/2 -translate-x-1/2 w-fit gap-[15px] duration-450 group-hover/marker:bg-main-600 translate-y-[10px] group-hover/marker:translate-y-[5px] opacity-0 group-hover/marker:opacity-100">
+                        <i class="icon icon-location text-[16px] h-[16px] text-white block leading-none duration-450"></i>
+                        <p class="text text-[16px] whitespace-nowrap text-white tracking-[0.1rem] font-light group-hover/marker:tracking-[0.15rem] duration-450">Get Direction</p>
+                    </div>
+                </div>`
             },
-            zoom: 17,
-            url: 'https://pentayazilim.com',
-            marker: `<div class="inner w-[100px] h-[100px] sm:w-[40px] sm:h-[40px] duration-350 flex-center group/marker">
-                <div class="image aspect-[50/50] max-w-[50px] md:aspect-square md:max-w-[50px] w-full overflow-hidden translate-z-0">
-                    <img src="../assets/image/other/favicon.png" class="full-cover" loading="lazy" alt="">
-                </div>
-                <div class="text-field flex items-center px-[25px] py-[17.5px] bg-main-500 rounded-full absolute top-full left-1/2 -translate-x-1/2 w-fit gap-[15px] duration-450 group-hover/marker:bg-main-600 translate-y-[10px] group-hover/marker:translate-y-[5px] opacity-0 group-hover/marker:opacity-100">
-                    <i class="icon icon-location text-[16px] h-[16px] text-white block leading-none duration-450"></i>
-                    <p class="text text-[16px] whitespace-nowrap text-white tracking-[0.1rem] font-light group-hover/marker:tracking-[0.15rem] duration-450">Get Direction</p>
-                </div>
-            </div>`
-        },
-        {
-            latLng: {
-                lat: 41.0447299,
-                lng: 28.6339078
-            },
-            zoom: 17,
-            url: 'https://google.com',
-            marker: `<div class="inner w-[100px] h-[100px] sm:w-[40px] sm:h-[40px] duration-350 flex-center group/marker">
-                <div class="image aspect-[50/50] max-w-[50px] md:aspect-square md:max-w-[50px] w-full overflow-hidden translate-z-0">
-                    <img src="../assets/image/other/favicon.png" class="full-cover" loading="lazy" alt="">
-                </div>
-                <div class="text-field flex items-center px-[25px] py-[17.5px] bg-main-500 rounded-full absolute top-full left-1/2 -translate-x-1/2 w-fit gap-[15px] duration-450 group-hover/marker:bg-main-600 translate-y-[10px] group-hover/marker:translate-y-[5px] opacity-0 group-hover/marker:opacity-100">
-                    <i class="icon icon-location text-[16px] h-[16px] text-white block leading-none duration-450"></i>
-                    <p class="text text-[16px] whitespace-nowrap text-white tracking-[0.1rem] font-light group-hover/marker:tracking-[0.15rem] duration-450">Get Direction</p>
-                </div>
-            </div>`
-        }, {
-            latLng: {
-                lat: 41.0242476,
-                lng: 28.9701656
-            },
-            zoom: 17,
-            url: 'https://pentayazilim.com',
-            marker: `<div class="inner w-[100px] h-[100px] sm:w-[40px] sm:h-[40px] duration-350 flex-center group/marker">
-                <div class="image aspect-[50/50] max-w-[50px] md:aspect-square md:max-w-[50px] w-full overflow-hidden translate-z-0">
-                    <img src="../assets/image/other/favicon.png" class="full-cover" loading="lazy" alt="">
-                </div>
-                <div class="text-field flex items-center px-[25px] py-[17.5px] bg-main-500 rounded-full absolute top-full left-1/2 -translate-x-1/2 w-fit gap-[15px] duration-450 group-hover/marker:bg-main-600 translate-y-[10px] group-hover/marker:translate-y-[5px] opacity-0 group-hover/marker:opacity-100">
-                    <i class="icon icon-location text-[16px] h-[16px] text-white block leading-none duration-450"></i>
-                    <p class="text text-[16px] whitespace-nowrap text-white tracking-[0.1rem] font-light group-hover/marker:tracking-[0.15rem] duration-450">Get Direction</p>
-                </div>
-            </div>`
-        },
-        {
-            latLng: {
-                lat: 41.0447299,
-                lng: 28.6339078
-            },
-            zoom: 17,
-            url: 'https://google.com',
-            marker: `<div class="inner w-[100px] h-[100px] sm:w-[40px] sm:h-[40px] duration-350 flex-center group/marker">
-                <div class="image aspect-[50/50] max-w-[50px] md:aspect-square md:max-w-[50px] w-full overflow-hidden translate-z-0">
-                    <img src="../assets/image/other/favicon.png" class="full-cover" loading="lazy" alt="">
-                </div>
-                <div class="text-field flex items-center px-[25px] py-[17.5px] bg-main-500 rounded-full absolute top-full left-1/2 -translate-x-1/2 w-fit gap-[15px] duration-450 group-hover/marker:bg-main-600 translate-y-[10px] group-hover/marker:translate-y-[5px] opacity-0 group-hover/marker:opacity-100">
-                    <i class="icon icon-location text-[16px] h-[16px] text-white block leading-none duration-450"></i>
-                    <p class="text text-[16px] whitespace-nowrap text-white tracking-[0.1rem] font-light group-hover/marker:tracking-[0.15rem] duration-450">Get Direction</p>
-                </div>
-            </div>`
-        }, {
-            latLng: {
-                lat: 41.0242476,
-                lng: 28.9701656
-            },
-            zoom: 17,
-            url: 'https://pentayazilim.com',
-            marker: `<div class="inner w-[100px] h-[100px] sm:w-[40px] sm:h-[40px] duration-350 flex-center group/marker">
-                <div class="image aspect-[50/50] max-w-[50px] md:aspect-square md:max-w-[50px] w-full overflow-hidden translate-z-0">
-                    <img src="../assets/image/other/favicon.png" class="full-cover" loading="lazy" alt="">
-                </div>
-                <div class="text-field flex items-center px-[25px] py-[17.5px] bg-main-500 rounded-full absolute top-full left-1/2 -translate-x-1/2 w-fit gap-[15px] duration-450 group-hover/marker:bg-main-600 translate-y-[10px] group-hover/marker:translate-y-[5px] opacity-0 group-hover/marker:opacity-100">
-                    <i class="icon icon-location text-[16px] h-[16px] text-white block leading-none duration-450"></i>
-                    <p class="text text-[16px] whitespace-nowrap text-white tracking-[0.1rem] font-light group-hover/marker:tracking-[0.15rem] duration-450">Get Direction</p>
-                </div>
-            </div>`
-        },
+        <?php endforeach; ?>
+        
     ];
 
     // Generate Map Function
