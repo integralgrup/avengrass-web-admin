@@ -422,7 +422,7 @@
 
 <!-- Önbellek tutmasın diye ekledim '?id<?= rand(); ?>' yazısını silersin -->
 <script src="../assets/js/script.js?id<?= rand(); ?>"></script>
-
+{!! $code->bitrix_widget_code !!}
 </body>
 
 </html>
