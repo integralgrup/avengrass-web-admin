@@ -247,5 +247,6 @@
 @endsection
 
 @section('script')
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA86-hoDCY032Z21QBSK-_F0-nduTBHY-4&a&callback=initMap&libraries=marker&v=beta" defer=""></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgSzMvUYR_Yw8eLUT3YTbQ5yQnARsCq8I&callback=initMap&libraries=marker&v=beta" defer=""></script>
+
 @endsection
