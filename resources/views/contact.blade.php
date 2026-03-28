@@ -134,8 +134,8 @@
         <?php foreach ($locationsInfo as $key => $item): ?>
             {
                 latLng: {
-                    lat: 41.0242476,
-                    lng: 28.9701656
+                    lat: <?=$item->lat?>,
+                    lng: <?=$item->longitude?>
                 },
                 zoom: 17,
                 url: '<?=$item->map_url?>',
