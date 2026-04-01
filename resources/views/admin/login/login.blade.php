@@ -3,7 +3,7 @@
   <!--begin::Head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Wepadel Admin Girişi</title>
+    <title>Avengrass Admin Girişi</title>
     <!--begin::Accessibility Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <meta name="color-scheme" content="light dark" />
@@ -11,15 +11,15 @@
     <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
     <!--end::Accessibility Meta Tags-->
     <!--begin::Primary Meta Tags-->
-    <meta name="title" content="Wepadel Admin Girişi" />
+    <meta name="title" content="Avengrass Admin Girişi" />
     <meta name="author" content="ColorlibHQ" />
     <meta
       name="description"
-      content="Wepadel Admin Girişi"
+      content="Avengrass Admin Girişi"
     />
     <meta
-      name="Wepadel"
-      content="Wepadel Admin Girişi"
+      name="Avengrass"
+      content="Avengrass Admin Girişi"
     />
     <!--end::Primary Meta Tags-->
     <!--begin::Accessibility Features-->
@@ -60,7 +60,7 @@
   <body class="login-page bg-body-secondary">
     <div class="login-box">
       <div class="login-logo">
-        <a href="../index2.html"><b>Wepadel</b>YAPI</a>
+        <a href="../index2.html"><b>Avengrass</b>YAPI</a>
       </div>
       <!-- /.login-logo -->
       <div class="card">

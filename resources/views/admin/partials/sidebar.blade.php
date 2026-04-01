@@ -10,7 +10,7 @@
             />
             <!--end::Brand Image-->
             <!--begin::Brand Text-->
-            <span class="brand-text fw-light">Wepadel</span>
+            <span class="brand-text fw-light">Avengrass</span>
             <!--end::Brand Text-->
           </a>
           <!--end::Brand Link-->

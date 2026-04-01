@@ -67,14 +67,14 @@
                                     <div class="homepage-main-prev relative pointer-events-auto duration-450 [&.swiper-button-disabled]:opacity-50 [&.swiper-button-disabled]:pointer-events-none">
                                         <div class="icon group/navigation flex flex-col items-center justify-center w-30 h-30 cursor-pointer hover:bg-white duration-450 space-y-[5px]">
                                             <i class="icon-arrow-left-small text-[#111] text-[12px] h-[8px] flex items-center justify-center group-hover/navigation:text-main-400 duration-450 group-hover/navigation:translate-x-[-3px]"></i>
-                                            <p class="text text-12 text-[#111] leading-tight font-light duration-450 group-hover/navigation:text-main-500">Back</p>
+                                            <p class="text text-12 text-[#111] leading-tight font-light duration-450 group-hover/navigation:text-main-500"><?=getStaticText(1)?></p>
                                         </div>
                                         <div class="split w-1 h-full bg-[#111] absolute right-[-15px] top-0 opacity-20"></div>
                                     </div>
                                     <div class="homepage-main-next relative pointer-events-auto duration-450 [&.swiper-button-disabled]:opacity-50 [&.swiper-button-disabled]:pointer-events-none">
                                         <div class="icon group/navigation flex flex-col items-center justify-center w-30 h-30 cursor-pointer hover:bg-white duration-450 space-y-[5px]">
                                             <div class="icon-arrow-right-small text-[#111] text-[12px] h-[8px] flex items-center justify-center group-hover/navigation:text-main-400 duration-450 group-hover/navigation:translate-x-[3px]"></div>
-                                            <p class="text text-12 text-[#111] leading-tight font-light duration-450 group-hover/navigation:text-main-500">Next</p>
+                                            <p class="text text-12 text-[#111] leading-tight font-light duration-450 group-hover/navigation:text-main-500"><?=getStaticText(2)?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -163,17 +163,17 @@
                         <div class="count-wrapper grid grid-cols-3 gap-40 lg:gap-30 md:gap-30 xs:grid-cols-3 w-fit md:mx-auto">
                             <?php $list = [
                                 [
-                                    'title' => 'Project',
+                                    'title' => getStaticText(3),
                                     'number' => '80',
                                     'icon' => '+',
                                 ],
                                 [
-                                    'title' => 'Customer',
+                                    'title' => getStaticText(4),
                                     'number' => '100',
                                     'icon' => '+',
                                 ],
                                 [
-                                    'title' => 'Services',
+                                    'title' => getStaticText(5),
                                     'number' => '20',
                                     'icon' => '+',
                                 ],
@@ -209,7 +209,7 @@
                     <!-- BUTTON -->
                     <div class="button-field mt-30 sm:mt-20 srb-short-all">
                         <a href="page-about.php" class="button group/button w-fit min-w-[200px] h-[50px] flex justify-center items-center px-[30px] rounded-full bg-main-500 relative gap-15 duration-450 overflow-hidden before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-main-600 hover:before:left-0 before:duration-450">
-                            <div class="text text-16 flex items-center text-white relative z-10 leading-tight duration-450 group-hover/button:text-white">About Us</div>
+                            <div class="text text-16 flex items-center text-white relative z-10 leading-tight duration-450 group-hover/button:text-white"><?= getStaticText(6) ?></div>
                             <div class="icon-arrow-right text-[16px] height-[16px] leading-none flex items-center text-white relative z-10 duration-450 group-hover/button:text-white group-hover/button:translate-x-[5px] rtl:-scale-x-100 rtl:group-hover/button:translate-x-[-5px]"></div>
                         </a>
                     </div>
@@ -238,8 +238,8 @@
         <div class="container max-w-[1500px] relative z-20">
             <div class="wrapper">
                 <div class="title-field product-title-field space-y-[40px] md:space-y-30 sm:space-y-20 mb-100 2xl:mb-80 xl:mb-60 lg:mb-40 md:mb-30 sm:mb-20 srb-short-all ">
-                    <p class="page-title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em] text-center">OUR PRODUCTS</p>
-                    <p class="title text-main-500 text-40 lg:text-36 md:text-32 sm:text-24 xs:text-20 font-semibold leading-tight duration-450 text-center">Beauty that Meets with the Glory of Green</p>
+                    <p class="page-title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em] text-center"><?= getStaticText(7) ?></p>
+                    <p class="title text-main-500 text-40 lg:text-36 md:text-32 sm:text-24 xs:text-20 font-semibold leading-tight duration-450 text-center"><?= getStaticText(8) ?></p>
                 </div>
                 <div class="tab-bar">
                     <div class="top-wrapper">
@@ -350,7 +350,7 @@
                                                                             <p class="title flex text-20 sm:text-18 text-[#111111] group-hover/slide:text-main-500 duration-450 group-hover/slide:hover:text-main-700 mt-15 md:mt-10"><?= $product['title'] ?></p>
                                                                             <div class="button-field mt-30 lg:mt-20 md:mt-15 sm:mt-10 sm:hidden">
                                                                                 <div class="button group/button w-fit min-w-[200px] h-[50px] flex justify-center items-center px-[30px] rounded-full bg-transparent relative gap-[15px] duration-450 overflow-hidden before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-main-600 before:duration-450 hover:before:left-0 hover:shadow-[inset_0_0_0_1px_var(--main-600)] shadow-[inset_0_0_0_1px_rgba(17,17,17,0.15)] group-hover/slide:shadow-[inset_0_0_0_1px_var(--main-500)] group-hover/slide:bg-main-500">
-                                                                                    <div class="text text-[15.18px] flex items-center text-[#111111] group-hover/slide:text-white group-hover/slide:group-hover/button:text-white relative z-10 leading-tight duration-450 group-hover/button:text-white">View</div>
+                                                                                    <div class="text text-[15.18px] flex items-center text-[#111111] group-hover/slide:text-white group-hover/slide:group-hover/button:text-white relative z-10 leading-tight duration-450 group-hover/button:text-white"><?= getStaticText(10) ?></div>
                                                                                     <div class="icon-arrow-right text-[16px] height-[16px] leading-none flex items-center text-[#111111] group-hover/slide:text-white group-hover/slide:group-hover/button:text-white relative z-10 duration-450 group-hover/button:text-white group-hover/button:translate-x-[5px] rtl:-scale-x-100 rtl:group-hover/button:translate-x-[-5px]"></div>
                                                                                 </div>
                                                                             </div>
@@ -429,7 +429,7 @@
                                         <div class="swiper-slide group/slide" data-id="<?= $key + 1 ?>">
                                             <div class="content relative">
                                                 <div class="title-field space-y-[40px] md:space-y-30 sm:space-y-20 mb-80 2xl:mb-60 xl:mb-60 lg:mb-40 md:mb-30 sm:mb-20">
-                                                    <p class="page-title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em] text-center">USING AREAS</p>
+                                                    <p class="page-title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em] text-center"><?= getStaticText(9) ?></p>
                                                     <p class="title text-main-500 text-40 lg:text-36 md:text-32 sm:text-24 xs:text-20 font-semibold leading-tight duration-450 text-center"><?= $item['title'] ?></p>
                                                     <div class="editor-field max-w-[768px] mx-auto">
                                                         <div class="text-editor !max-w-full editor-p:text-18 editor-li:text-18 sm:editor-p:text-16 sm:editor-li:text-16 xs:editor-p:text-14 xs:editor-li:text-14 line-clamp-3">
@@ -477,7 +477,7 @@
                                                 </div>
                                                 <div class="button-field flex items-center justify-center mt-100 2xl:mt-80 xl:mt-60 lg:mt-45 md:mt-30 sm:mt-20" dir="ltr">
                                                     <a href="<?= env('HTTP_DOMAIN') . '/' . getUrl('using_areas_url') .'/'. $item->seo_url ?>" class="button group/button w-fit min-w-[200px] h-[50px] flex justify-center items-center px-[30px] rounded-full bg-main-500 relative gap-15 duration-450 overflow-hidden before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-main-600 hover:before:left-0 before:duration-450">
-                                                        <div class="text text-16 flex items-center text-white relative z-10 leading-tight duration-450 group-hover/button:text-white font-normal rtl:order-2">View</div>
+                                                        <div class="text text-16 flex items-center text-white relative z-10 leading-tight duration-450 group-hover/button:text-white font-normal rtl:order-2"><?= getStaticText(10) ?></div>
                                                         <div class="icon-arrow-right text-[16px] height-[10px] leading-none flex items-center text-white relative z-10 duration-450 group-hover/button:text-white group-hover/button:translate-x-[5px] rtl:-scale-x-100 rtl:group-hover/button:translate-x-[-5px] rtl:order-1"></div>
                                                     </a>
                                                 </div>
@@ -573,7 +573,7 @@
                     <div class="dynamic-sticky">
                         <!-- TITILE -->
                         <div class="title-field block z-10 relative space-y-[30px] md:space-y-20 sm:space-y-15 mb-30 sm:mb-20">
-                            <p class="page-title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em]">SERVICES</p>
+                            <p class="page-title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em]"><?= getStaticText(11) ?></p>
                         </div>
                         <!-- OFFICE LIST -->
                         <ul class="[&_.hpua-box:last-child_.split]:hidden [&_.hpua-box:has(+.hoverable)_.split]:opacity-0 flex flex-col gap-[60px] xl:gap-[50px] lg:gap-[40px] md:gap-[30px] sm:gap-[25px]">
@@ -596,7 +596,7 @@
                                             </div>
                                             <div class="button-field mt-30 sm:mt-20 sm:hidden">
                                                 <a href="<?= env('HTTP_DOMAIN') . '/' . getUrl('services_url') .'/'. $item->seo_url ?>" class="button group/button min-w-[200px] w-fit h-[50px] flex justify-center items-center px-[30px] rounded-full bg-main-500 relative gap-15 duration-450 overflow-hidden before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-main-600 hover:before:left-0 before:duration-450">
-                                                    <div class="text text-16 flex items-center text-white relative z-10 leading-tight duration-450 group-hover/button:text-white">View</div>
+                                                    <div class="text text-16 flex items-center text-white relative z-10 leading-tight duration-450 group-hover/button:text-white"><?= getStaticText(10) ?></div>
                                                     <div class="icon-arrow-right text-[16px] height-[16px] leading-none flex items-center text-white relative z-10 duration-450 group-hover/button:text-white group-hover/button:translate-x-[5px] rtl:-scale-x-100 rtl:group-hover/button:translate-x-[-5px]"></div>
                                                 </a>
                                             </div>
@@ -635,7 +635,7 @@
         <div class="container max-w-[1500px]">
             <div class="wrapper">
                 <div class="title-field product-title-field space-y-[40px] md:space-y-30 sm:space-y-20 mb-60 2xl:mb-80 xl:mb-60 lg:mb-40 md:mb-30 sm:mb-20 srb-short-all ">
-                    <p class="title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em] text-center">OUR CERTIFICATES</p>
+                    <p class="title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em] text-center"><?= getStaticText(12) ?></p>
                 </div>
                 <div class="carousel-field relative">
                     <div class="reference-carousel swiper">
@@ -720,7 +720,7 @@
                             </div>
                         </div>
                         <a href="page-services.php" class="button group/button w-fit h-[50px] md:h-[40px] flex justify-center items-center px-[30px] rounded-full bg-main-500 relative gap-15 duration-450 overflow-hidden before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-main-600 hover:before:left-0 before:duration-450">
-                            <div class="text text-16 flex items-center text-white relative z-10 leading-tight duration-450 group-hover/button:text-white">All Services</div>
+                            <div class="text text-16 flex items-center text-white relative z-10 leading-tight duration-450 group-hover/button:text-white"><?= getStaticText(13) ?></div>
                         </a>
                     </div>
                     <div class="carousel-field relative md:order-1">
@@ -732,7 +732,7 @@
                                         <div class="content relative opacity-0 invisible duration-450 group-[&.swiper-slide-active]/slide:opacity-100 group-[&.swiper-slide-active]/slide:visible">
                                             <div class="text-field ">
                                                 <div class="title-field block z-10 relative space-y-[20px] md:space-y-15 sm:space-y-10">
-                                                    <p class="page-title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em]">PROJECTS</p>
+                                                    <p class="page-title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em]"><?= getStaticText(14) ?></p>
                                                     <a href="<?= env('HTTP_DOMAIN').'/'.getUrl('project_url') . '/' . $item->seo_url ?>" class="title text-main-500 text-40 lg:text-36 md:text-32 sm:text-24 xs:text-20 font-semibold leading-tight line-clamp-2 hover:text-main-600 hover:translate-x-[4px] duration-450 rtl:hover:translate-x-[-4px]"><?= $item['title'] ?></a>
                                                 </div>
                                                 <div class="editor-field mt-30 md:mt-20 sm:mt-15">
@@ -754,7 +754,7 @@
                                                 </div>
                                                 <div class="button-field mt-30 sm:mt-20 md:hidden">
                                                     <a href="<?= env('HTTP_DOMAIN').'/'.getUrl('project_url') . '/' . $item->seo_url ?>" class="button group/button w-fit min-w-[200px] h-[50px] flex justify-center items-center px-[30px] rounded-full bg-main-500 relative gap-15 duration-450 overflow-hidden before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-main-600 hover:before:left-0 before:duration-450">
-                                                        <div class="text text-16 flex items-center text-white relative z-10 leading-tight duration-450 group-hover/button:text-white">View</div>
+                                                        <div class="text text-16 flex items-center text-white relative z-10 leading-tight duration-450 group-hover/button:text-white"><?= getStaticText(10) ?></div>
                                                         <div class="icon-arrow-right text-[16px] height-[16px] leading-none flex items-center text-white relative z-10 duration-450 group-hover/button:text-white group-hover/button:translate-x-[5px] rtl:-scale-x-100 rtl:group-hover/button:translate-x-[-5px]"></div>
                                                     </a>
                                                 </div>
@@ -808,7 +808,7 @@
             <div class="wrapper relative">
                 <div class="text-wrapper grid grid-cols-2 md:grid-cols-1 absolute left-0 top-0 w-[calc(100%-60px)] lg:w-[calc(100%-40px)] md:w-full md:relative mb-50 lg:mb-40 md:mb-30 gap-150 xl:gap-100 lg:gap-50 md:gap-30 z-20 rtl:ml-30 rtl:md:ml-0">
                     <div class="title-field flex justify-between gap-20 items-center xs:flex-col xs:items-center">
-                        <p class="title text-[#757575] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em] sm:text-center">BLOG & NEWS</p>
+                        <p class="title text-[#757575] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em] sm:text-center"><?= getStaticText(15) ?></p>
                         <div class="carousel-controller">
                             <div class="carousel-navigation flex gap-20 pointer-events-none">
                                 <div class="other-blog-prev pointer-events-auto duration-450 [&.swiper-button-disabled]:opacity-50 [&.swiper-button-disabled]:pointer-events-none">
@@ -853,7 +853,7 @@
                                                 </div>
                                                 <div class="button-field mt-30 md:mt-20 sm:hidden">
                                                     <a href="<?= env('HTTP_DOMAIN') . '/' . getUrl('blog_url') .'/'. $item->seo_url ?>" class="button group/button w-fit min-w-[200px] h-[50px] flex justify-center items-center px-[30px] rounded-full bg-transparent relative gap-[15px] duration-450 overflow-hidden before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-main-600 before:duration-450  hover:before:left-0 hover:shadow-[inset_0_0_0_1px_var(--main-600)] shadow-[inset_0_0_0_1px_rgba(17,17,17,0.15)] group-hover/slide:shadow-[inset_0_0_0_1px_var(--main-500)]">
-                                                        <div class="text text-[15.18px] flex items-center text-[#111111] group-hover/slide:text-main-500 group-hover/slide:group-hover/button:text-white relative z-10 leading-tight duration-450 group-hover/button:text-white">View</div>
+                                                        <div class="text text-[15.18px] flex items-center text-[#111111] group-hover/slide:text-main-500 group-hover/slide:group-hover/button:text-white relative z-10 leading-tight duration-450 group-hover/button:text-white"><?= getStaticText(10) ?></div>
                                                         <div class="icon-arrow-right text-[16px] height-[16px] leading-none flex items-center text-[#111111] group-hover/slide:text-main-500 group-hover/slide:group-hover/button:text-white relative z-10 duration-450 group-hover/button:text-white group-hover/button:translate-x-[5px] rtl:-scale-x-100 rtl:group-hover/button:translate-x-[-5px]"></div>
                                                     </a>
                                                 </div>

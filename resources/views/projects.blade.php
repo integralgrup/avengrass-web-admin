@@ -584,7 +584,7 @@
                                             </div>
                                             <div class="button-field flex items-end opacity-0 invisible pointer-events-none duration-450 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:pointer-events-auto translate-y-10 group-hover/item:translate-y-0 md:hidden">
                                                 <a href="<?= env('HTTP_DOMAIN').'/'.getUrl('project_url') . '/' . $item->seo_url ?>" class="button group/button w-fit h-[50px] flex justify-center items-center px-[30px] rounded-full bg-main-500 relative gap-15 duration-450 overflow-hidden before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-main-600 hover:before:left-0 before:duration-450">
-                                                    <div class="text text-16 flex items-center text-white relative z-10 leading-tight duration-450 group-hover/button:text-white">View</div>
+                                                    <div class="text text-16 flex items-center text-white relative z-10 leading-tight duration-450 group-hover/button:text-white"><?= getStaticText(10) ?></div>
                                                     <div class="icon-arrow-right text-[16px] height-[16px] leading-none flex items-center text-white relative z-10 duration-450 group-hover/button:text-white group-hover/button:translate-x-[5px] rtl:-scale-x-100 rtl:group-hover/button:translate-x-[-5px]"></div>
                                                 </a>
                                             </div>
@@ -629,7 +629,7 @@
                                         </div>
                                         <div class="button-field flex items-end opacity-0 invisible pointer-events-none duration-450 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:pointer-events-auto translate-y-10 group-hover/item:translate-y-0 md:hidden">
                                             <a href="<?= env('HTTP_DOMAIN').'/'.getUrl('project_url') . '/' . $item->seo_url ?>" class="button group/button w-fit h-[50px] flex justify-center items-center px-[30px] rounded-full bg-main-500 relative gap-15 duration-450 overflow-hidden before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-main-600 hover:before:left-0 before:duration-450">
-                                                <div class="text text-16 flex items-center text-white relative z-10 leading-tight duration-450 group-hover/button:text-white">View</div>
+                                                <div class="text text-16 flex items-center text-white relative z-10 leading-tight duration-450 group-hover/button:text-white"><?= getStaticText(10) ?></div>
                                                 <div class="icon-arrow-right text-[16px] height-[16px] leading-none flex items-center text-white relative z-10 duration-450 group-hover/button:text-white group-hover/button:translate-x-[5px] rtl:-scale-x-100 rtl:group-hover/button:translate-x-[-5px]"></div>
                                             </a>
                                         </div>

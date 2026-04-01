@@ -230,10 +230,10 @@
             <div class="container max-w-[1500px] px-[50px] md:px-[0]">
                 <div class="wrapper grid grid-cols-3 gap-[30px] lg:grid-cols-1">
                     <div class="integral-info flex items-center justify-start lg:justify-center">
-                        <p class="text text-16 sm:text-14 text-[#111111]/50 leading-tight text-center font-normal">Avengrass is a Brand of <a href="javascript:;" class="text-main-500 duration-450 hover:text-main-700 font-semibold">Integral Group</a></p>
+                        <p class="text text-16 sm:text-14 text-[#111111]/50 leading-tight text-center font-normal"><?= getStaticText(16) ?></p>
                     </div>
                     <div class="copyright flex items-center justify-center sm:hidden">
-                        <p class="text text-16 sm:text-14 text-[#111111]/50 leading-tight text-center font-normal">© 2023 <a href="javascript:;" class="text-main-500 duration-450 hover:text-main-700 font-semibold leading-tight">avengrass.com</a> | All rights reserved.</p>
+                        <p class="text text-16 sm:text-14 text-[#111111]/50 leading-tight text-center font-normal">© <?=date('Y')?> <a href="javascript:;" class="text-main-500 duration-450 hover:text-main-700 font-semibold leading-tight">Avengrass.com</a> | <?= getStaticText(17) ?></p>
                     </div>
                     <div class="integral-image flex items-center justify-end lg:justify-center sm:hidden">
                         <a href="javascript:;" class="image flex w-fit max-w-[110px] h-[40px] overflow-hidden translate-z-0 duration-450 opacity-100 hover:opacity-50">

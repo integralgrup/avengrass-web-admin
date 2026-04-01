@@ -40,7 +40,7 @@
                                                         </div>
                                                         <div class="button-field mt-50 lg:mt-30 md:mt-30 sm:mt-20 opacity-0 invisible translate-y-20 duration-450 group-[&.swiper-slide-active]/slide:opacity-100 group-[&.swiper-slide-active]/slide:visible group-[&.swiper-slide-active]/slide:translate-y-0 group-[&.swiper-slide-active]/slide:delay-800">
                                                             <a href="<?= env('HTTP_DOMAIN').'/'.getUrl('blog_url') . '/' . $blog->seo_url ?>" class="button group/button w-[200px] h-[50px] flex justify-center items-center px-[30px] rounded-full bg-main-500 relative gap-10 duration-450 overflow-hidden before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-main-600 hover:before:left-0 before:duration-450">
-                                                                <div class="text text-16 flex items-center text-white relative z-10 leading-tight duration-450 group-hover/button:text-white">View</div>
+                                                                <div class="text text-16 flex items-center text-white relative z-10 leading-tight duration-450 group-hover/button:text-white"><?= getStaticText(10) ?></div>
                                                                 <div class="icon-arrow-right text-[16px] height-[16px] leading-none flex items-center text-white relative z-10 duration-450 group-hover/button:text-white group-hover/button:translate-x-[5px] rtl:-scale-x-100 rtl:group-hover/button:translate-x-[-5px]"></div>
                                                             </a>
                                                         </div>
@@ -178,7 +178,7 @@
                                     </div>
                                     <div class="button-field mt-30 md:mt-20 sm:hidden">
                                         <a href="<?= env('HTTP_DOMAIN').'/'.getUrl('blog_url') . '/' . $blog->seo_url ?>" class="button group/button w-fit min-w-[200px] h-[50px] flex justify-center items-center px-[30px] rounded-full bg-transparent relative gap-[15px] duration-450 overflow-hidden before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-main-600 before:duration-450  hover:before:left-0 hover:shadow-[inset_0_0_0_1px_var(--main-600)] shadow-[inset_0_0_0_1px_rgba(17,17,17,0.15)] group-hover/item:shadow-[inset_0_0_0_1px_var(--main-500)]">
-                                            <div class="text text-[15.18px] flex items-center text-[#111111] group-hover/item:text-main-500 group-hover/item:group-hover/button:text-white relative z-10 leading-tight duration-450 group-hover/button:text-white">View</div>
+                                            <div class="text text-[15.18px] flex items-center text-[#111111] group-hover/item:text-main-500 group-hover/item:group-hover/button:text-white relative z-10 leading-tight duration-450 group-hover/button:text-white"><?= getStaticText(10) ?></div>
                                             <div class="icon-arrow-right text-[16px] height-[16px] leading-none flex items-center text-[#111111] group-hover/item:text-main-500 group-hover/item:group-hover/button:text-white relative z-10 duration-450 group-hover/button:text-white group-hover/button:translate-x-[5px] rtl:-scale-x-100 rtl:group-hover/button:translate-x-[-5px]"></div>
                                         </a>
                                     </div>

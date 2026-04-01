@@ -61,7 +61,7 @@
                                     <div class="swiper-slide overflow-hidden" data-slide-name="<?= $item->title ?>" data-slide-id="<?= $key + 1 ?>">
                                         <div class="item w-full grid grid-cols-2 sm:grid-cols-1 items-end gap-[200px] 2xl:gap-[160px] xl:gap-[100px] lg:gap-[60px] md:gap-[30px]">
                                             <div class="left mb-[90px] 2xl:mb-[60px] xl:mb-[45px] lg:mb-[30px] md:mb-0">
-                                                <span class="block mb-[50px] md:mb-[30px] text-[16px] leading-[32px] font-light text-white opacity-65 tracking-[7.2px]">Wepadel’da Yaşam</span>
+                                                <span class="block mb-[50px] md:mb-[30px] text-[16px] leading-[32px] font-light text-white opacity-65 tracking-[7.2px]">Avengrass’da Yaşam</span>
                                                 <div class="flex flex-col gap-[30px] sm:gap-[20px] text-editor">
                                                     <h3 class="text-[46px] xl:text-[32px] lg:text-[24px] leading-[60px] xl:leading-[50px] lg:leading-[40px] md:leading-[36px] tracking-[-0.46px] font-light text-white [&_span]:font-bold"><?= $item->title ?></h3>
                                                     <p class="text-[17px] md:text-[16px] sm:text-[15px] leading-[32px] sm:leading-[28px] font-light text-white mb-[20px] sm:mb-[5px]"><?= $item->description ?></p>
@@ -106,7 +106,7 @@
         <div class="position-section mb-[130px] xl:mb-[100px] lg:mb-[75px] md:mb-[50px]" id="positions">
             <div class="container max-w-[1650px]">
                 <h3 class="reveal text-[46px] xl:text-[32px] lg:text-[24px] leading-[60px] xl:leading-[50px] lg:leading-[40px] md:leading-[36px] tracking-[-0.46px] font-light text-center w-full text-secondary-main mb-[50px] xl:mb-[30px] xs:mb-[20px]">
-                    Wepadel <br>
+                    Avengrass <br>
                     <span class="font-bold">Pozisyonlar</span>
                 </h3>
                 <div class="grid grid-cols-2 md:grid-cols-1 gap-[30px]">

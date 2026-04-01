@@ -274,7 +274,7 @@ class HomeController extends Controller
         $using_areas = UsingArea::where('lang', app()->getLocale())->get();
        
         
-        $categories = Menu::where(['parent_menu_id' => 0,'page_type' => 'product_category', 'lang' => app()->getLocale()])
+        $categories = Menu::where(['parent_menu_id' => 0,'page_type' => 'product_category', 'menu_type' => 'header', 'lang' => app()->getLocale()])
         ->orderBy('sort', 'asc')
         ->with('children')
         ->get();

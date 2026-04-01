@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 
-@section('title', 'Wepadel - Anasayfa')
+@section('title', 'Avengrass - Anasayfa')
 
 @section('content')
     <!--begin::App Content Header-->

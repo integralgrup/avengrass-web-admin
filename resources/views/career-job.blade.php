@@ -23,7 +23,7 @@
                 <div class="bg-primary-main absolute -z-[1] -bottom-[40px] -left-[40px] w-[501px] aspect-square md:hidden"></div>
                 <div class="relative grid grid-cols-[2.5fr_2fr] md:grid-cols-1 gap-[80px] xl:gap-[30px]">
                     <div class="left flex items-center reveal md:hidden">
-                        <img src="../assets/image/static/career-mockup.png" alt="Wepadel Kariyer" width="900" height="796" class="w-[900px] h-auto translate-x-[-40px] sm:translate-x-[-20px]">
+                        <img src="../assets/image/static/career-mockup.png" alt="Avengrass Kariyer" width="900" height="796" class="w-[900px] h-auto translate-x-[-40px] sm:translate-x-[-20px]">
                     </div>
                     <div class="right py-[72px] xl:py-[50px] pr-[100px] 2xl:pr-[60px] lg:pr-[45px] md:px-[30px]">
                         <div class="form">

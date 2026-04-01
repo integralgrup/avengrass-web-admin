@@ -12,7 +12,7 @@
     <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
     <!--end::Accessibility Meta Tags-->
     <!--begin::Primary Meta Tags-->
-    <meta name="title" content="Wepadel - Yönetim" />
+    <meta name="title" content="Avengrass - Yönetim" />
     <meta name="author" content="İntegral Group" />
     
     <!--end::Primary Meta Tags-->
