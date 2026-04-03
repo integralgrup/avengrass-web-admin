@@ -183,7 +183,7 @@
                                             <div class="split w-1 h-full bg-[#AAAAAA] absolute left-0 top-0 duration-450 group-hover/item:bg-main-500 sm:hidden group-[&.swiper-slide-active]/slide:hidden opacity-30"></div>
                                             <div class="image-field rounded-[15px] overflow-hidden">
                                                 <a href="single-blog.php" class="image h-325 xs:h-250 sm:h-275 md:h-300 overflow-hidden translate-z-0 flex w-full hover:scale-110 duration-450">
-                                                    <img src="<?= $item['image'] ?>" class="full-cover image-parallax-effect" loading="lazy" alt="">
+                                                    <img src="<?= env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'blog_images_folder'], $item->lang) . '/' . $item->image ?>" class="full-cover image-parallax-effect" loading="lazy" alt="">
                                                 </a>
                                             </div>
                                             <div class="text-field mt-30 md:mt-20">
@@ -195,7 +195,7 @@
                                                 <div class="editor-field mt-30 md:mt-20">
                                                     <div class="text-editor !max-w-full editor-p:text-18 editor-li:text-18 sm:editor-p:text-16 sm:editor-li:text-16 xs:editor-p:text-14 xs:editor-li:text-14 editor-p:font-light editor-p:text-[#111111] editor-p:hidden [&_*:first-child]:line-clamp-2 [&_*]:!mb-0">
                                                         <!-- Stylelar tasarımı yansıtmak adına eklenmiştir. / Backendde silinerek panel editörü üzerinden eklenmeli. -->
-                                                        <?= $item['description'] ?>
+                                                        {{$item->short_description }}
                                                     </div>
                                                 </div>
                                                 <div class="button-field mt-30 md:mt-20 sm:hidden">
