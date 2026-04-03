@@ -182,7 +182,7 @@
                                         <div class="content pl-60 lg:pl-40 md:pl-30 sm:pl-0 relative group-[&.swiper-slide-active]/slide:pl-0">
                                             <div class="split w-1 h-full bg-[#AAAAAA] absolute left-0 top-0 duration-450 group-hover/item:bg-main-500 sm:hidden group-[&.swiper-slide-active]/slide:hidden opacity-30"></div>
                                             <div class="image-field rounded-[15px] overflow-hidden">
-                                                <a href="single-blog.php" class="image h-325 xs:h-250 sm:h-275 md:h-300 overflow-hidden translate-z-0 flex w-full hover:scale-110 duration-450">
+                                                <a href="<?= env('HTTP_DOMAIN') . '/' . getUrl('blog_url') .'/'. $item->seo_url ?>" class="image h-325 xs:h-250 sm:h-275 md:h-300 overflow-hidden translate-z-0 flex w-full hover:scale-110 duration-450">
                                                     <img src="<?= env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'blog_images_folder'], $item->lang) . '/' . $item->image ?>" class="full-cover image-parallax-effect" loading="lazy" alt="">
                                                 </a>
                                             </div>
@@ -191,7 +191,7 @@
                                                     <i class="icon icon-calendar text-[16px] h-[16px] text-[#40403B]/20 block leading-none duration-450"></i>
                                                     <p class="text text-16 leading-tight text-[#111111] group-hover/date:translate-x-5 duration-450"><?= $item['date'] ?></p>
                                                 </div>
-                                                <a href="single-blog.php" class="title flex text-28 xl:text-26 lg:text-24 md:text-22 sm:text-20 xs:text-18 leading-tight text-[#111111] duration-450 hover:text-main-500 font-semibold mt-20 md:mt-15 group-hover/slide:text-main-500 group-hover/slide:hover:text-main-600"><?= $item['title'] ?></a>
+                                                <a href="<?= env('HTTP_DOMAIN') . '/' . getUrl('blog_url') .'/'. $item->seo_url ?>" class="title flex text-28 xl:text-26 lg:text-24 md:text-22 sm:text-20 xs:text-18 leading-tight text-[#111111] duration-450 hover:text-main-500 font-semibold mt-20 md:mt-15 group-hover/slide:text-main-500 group-hover/slide:hover:text-main-600"><?= $item['title'] ?></a>
                                                 <div class="editor-field mt-30 md:mt-20">
                                                     <div class="text-editor !max-w-full editor-p:text-18 editor-li:text-18 sm:editor-p:text-16 sm:editor-li:text-16 xs:editor-p:text-14 xs:editor-li:text-14 editor-p:font-light editor-p:text-[#111111] editor-p:hidden [&_*:first-child]:line-clamp-2 [&_*]:!mb-0">
                                                         <!-- Stylelar tasarımı yansıtmak adına eklenmiştir. / Backendde silinerek panel editörü üzerinden eklenmeli. -->
@@ -199,7 +199,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="button-field mt-30 md:mt-20 sm:hidden">
-                                                    <a href="single-blog.php" class="button group/button w-fit min-w-[200px] h-[50px] flex justify-center items-center px-[30px] rounded-full bg-transparent relative gap-[15px] duration-450 overflow-hidden before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-main-600 before:duration-450  hover:before:left-0 hover:shadow-[inset_0_0_0_1px_var(--main-600)] shadow-[inset_0_0_0_1px_rgba(17,17,17,0.15)] group-hover/slide:shadow-[inset_0_0_0_1px_var(--main-500)]">
+                                                    <a href="<?= env('HTTP_DOMAIN') . '/' . getUrl('blog_url') .'/'. $item->seo_url ?>" class="button group/button w-fit min-w-[200px] h-[50px] flex justify-center items-center px-[30px] rounded-full bg-transparent relative gap-[15px] duration-450 overflow-hidden before:content before:absolute before:left-[-100%] before:top-0 before:w-full before:h-full before:bg-main-600 before:duration-450  hover:before:left-0 hover:shadow-[inset_0_0_0_1px_var(--main-600)] shadow-[inset_0_0_0_1px_rgba(17,17,17,0.15)] group-hover/slide:shadow-[inset_0_0_0_1px_var(--main-500)]">
                                                         <div class="text text-[15.18px] flex items-center text-[#111111] group-hover/slide:text-main-500 group-hover/slide:group-hover/button:text-white relative z-10 leading-tight duration-450 group-hover/button:text-white"><?= getStaticText(10) ?></div>
                                                         <div class="icon-arrow-right text-[16px] height-[16px] leading-none flex items-center text-[#111111] group-hover/slide:text-main-500 group-hover/slide:group-hover/button:text-white relative z-10 duration-450 group-hover/button:text-white group-hover/button:translate-x-[5px] rtl:-scale-x-100 rtl:group-hover/button:translate-x-[-5px]"></div>
                                                     </a>
