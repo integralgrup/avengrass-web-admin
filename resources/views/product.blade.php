@@ -161,7 +161,7 @@ $breadcrumbTitle = $product->title;
                                                 <div class="content relative h-full">
                                                     <div class="image-field relative translate-z-0 h-full">
                                                         <div class="image group/image group/popup relative h-full xs:!h-250 sm:!h-300 md:!h-350 overflow-hidden cursor-pointer translate-z-0" href="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], $product->lang) .'/'. $image->image}}" data-fancybox="carouselGallery" data-caption="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque architecto facere repudiandae exercitationem culpa, natus fugiat ab iure alias commodi, corrupti quod adipisci. Eligendi amet veritatis ipsam debitis neque reiciendis!">
-                                                            <img src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], $product->lang) .'/'. $image->image}}" class="full-cover duration-450 group-hover/image:scale-110">
+                                                            <img src="{{env('HTTP_DOMAIN') .'/'. getFolder(['uploads_folder', 'product_images_folder'], $image->lang) .'/'. $image->image}}" class="full-cover duration-450 group-hover/image:scale-110">
                                                         </div>
                                                     </div>
                                                 </div>
