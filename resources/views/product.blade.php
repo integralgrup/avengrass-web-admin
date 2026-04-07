@@ -5,8 +5,6 @@
 $pageTitle = $product->title;
 $breadcrumbTitle = $product->title;
 
-dd($product);
-
 ?>
 <?php $code = \App\Models\Code::where('lang', app()->getLocale())->first(); ?>
 
