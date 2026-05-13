@@ -313,7 +313,7 @@ Route::get('/copy-image', 'App\Http\Controllers\HomeController@image_copy')->nam
 
 //Project Front End routes
 //Home route
-Route::get('/sitemap.xml', 'App\Http\Controllers\HomeController@index')->name('sitemap');
+Route::get('/sitemap.xml', 'App\Http\Controllers\SitemapController@index')->name('sitemap');
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::get('{slug}/{slug2?}', 'App\Http\Controllers\HomeController@route')->name('page.route');
 
