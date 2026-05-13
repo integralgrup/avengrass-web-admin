@@ -29,7 +29,7 @@
        
     ?>
     <?php if($menu->page_type != 'blog' && $menu->page_type != 'product' && 
-            $menu->page_type != 'product_category'  && $menu->page_type != 'project'){ ?>
+            $menu->page_type != 'product_category'  && $menu->page_type != 'project' && $menu->page_type != 'services' && $menu->page_type != 'using_areas'){ ?>
         <url>
             <loc>{{ url('/' . $pageParam . $menu->seo_url) }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
@@ -67,6 +67,24 @@
     @foreach ($products as $product)
          <url>
             <loc>{{ url('/' . $product->category->seo_url . '/' . $product->seo_url) }}</loc>
+            <lastmod>{{ date('Y-m-d') }}</lastmod>
+            <priority>1</priority>
+        </url>
+    @endforeach
+
+    <!-- Dynamic Services -->
+    @foreach ($services as $service)
+         <url>
+            <loc>{{ url('/' . getUrl('service_url') . '/' . $service->seo_url) }}</loc>
+            <lastmod>{{ date('Y-m-d') }}</lastmod>
+            <priority>1</priority>
+        </url>
+    @endforeach
+
+    <!-- Dynamic Using Areas -->
+    @foreach ($using_areas as $using_area)
+         <url>
+            <loc>{{ url('/' . getUrl('using_area_url') . '/' . $using_area->seo_url) }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
             <priority>1</priority>
         </url>
