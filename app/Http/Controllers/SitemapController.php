@@ -21,13 +21,13 @@ class SitemapController extends Controller
 
         $products = Product::latest()->where('lang', app()->getLocale())->with('category')->get();
 
-        $clubs = Club::latest()->where('lang', app()->getLocale())->get();
+        //$clubs = Club::latest()->where('lang', app()->getLocale())->get();
 
 
         //dd($menus, $blogs, $projects, $products);
 
         return response()
-            ->view('sitemap.index', compact('menus', 'blogs', 'projects', 'products', 'clubs'))
+            ->view('sitemap.index', compact('menus', 'blogs', 'projects', 'products'))
             ->header('Content-Type', 'application/xml');
     }
 }

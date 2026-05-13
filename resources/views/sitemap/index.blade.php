@@ -29,7 +29,7 @@
        
     ?>
     <?php if($menu->page_type != 'blog' && $menu->page_type != 'product' && 
-            $menu->page_type != 'product_category'  && $menu->page_type != 'project' && $menu->page_type != 'club'){ ?>
+            $menu->page_type != 'product_category'  && $menu->page_type != 'project'){ ?>
         <url>
             <loc>{{ url('/' . $pageParam . $menu->seo_url) }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
@@ -67,15 +67,6 @@
     @foreach ($products as $product)
          <url>
             <loc>{{ url('/' . $product->category->seo_url . '/' . $product->seo_url) }}</loc>
-            <lastmod>{{ date('Y-m-d') }}</lastmod>
-            <priority>1</priority>
-        </url>
-    @endforeach
-
-    <!-- Dynamic Clubs -->
-    @foreach ($clubs as $club)
-         <url>
-            <loc>{{ url('/' . getUrl('club_url') . '/' . $club->seo_url) }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
             <priority>1</priority>
         </url>
