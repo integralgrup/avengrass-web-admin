@@ -75,7 +75,7 @@
     <!-- Dynamic Services -->
     @foreach ($services as $service)
          <url>
-            <loc>{{ env('HTTP_DOMAIN') . '/' . getUrl('services_url') . '/' . $service->seo_url ) }}</loc>
+            <loc>{{ env('HTTP_DOMAIN') . '/' . getUrl('services_url') . '/' . $service->seo_url  }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
             <priority>1</priority>
         </url>
@@ -84,7 +84,7 @@
     <!-- Dynamic Using Areas -->
     @foreach ($using_areas as $using_area)
          <url>
-            <loc>{{ env('HTTP_DOMAIN') . '/' . getUrl('using_areas_url') . '/' . $using_area->seo_url) }}</loc>
+            <loc>{{ env('HTTP_DOMAIN') . '/' . getUrl('using_areas_url') . '/' . $using_area->seo_url }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
             <priority>1</priority>
         </url>
