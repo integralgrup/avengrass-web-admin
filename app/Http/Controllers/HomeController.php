@@ -376,6 +376,7 @@ class HomeController extends Controller
 
         if($menu->page_type == 'using_areas') {
             if($slug2 != null) {
+                $using_areas = UsingArea::where(['lang' => app()->getLocale()])->limit(4)->get();
                 $using_area = UsingArea::where(['lang' => app()->getLocale(), 'seo_url' => $slug2])->with([])->firstOrFail();
                 $seo = $using_area;
                 
@@ -449,7 +450,7 @@ class HomeController extends Controller
         if($menu->page_type == 'blog') {
             if($slug2!= null) {
                 // Get blog posts limit 5 as array
-                $blogs = Blog::where(['lang' => app()->getLocale()])->limit(10)->orderBy('created_at', 'desc')->get();
+                $blogs = Blog::where(['lang' => app()->getLocale()])->orderBy('created_at', 'desc')->get();
                 //dd($blogs);
                 $blog = Blog::where(['lang' => app()->getLocale(), 'seo_url' => $slug2])->firstOrFail();
                 $seo = $blog;
