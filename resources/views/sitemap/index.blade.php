@@ -31,7 +31,7 @@
     <?php if($menu->page_type != 'blog' && $menu->page_type != 'product' && 
             $menu->page_type != 'product_category'  && $menu->page_type != 'project' && $menu->page_type != 'services' && $menu->page_type != 'using_areas'){ ?>
         <url>
-            <loc>{{ url('/' . $pageParam . $menu->seo_url) }}</loc>
+            <loc>{{ env('HTTP_DOMAIN') . '/' . $pageParam . $menu->seo_url }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
             <priority>1</priority>
         </url>
@@ -48,7 +48,7 @@
         ?>
         
         <url>
-            <loc>{{ url('/' . $pageParam . $blog->seo_url) }}</loc>
+            <loc>{{ env('HTTP_DOMAIN') . '/' . $pageParam . $blog->seo_url }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
             <priority>1</priority>
         </url>
@@ -57,7 +57,7 @@
     <!-- Dynamic Projects -->
     @foreach ($projects as $project)
          <url>
-            <loc>{{ url('/' . getUrl('project_url') . '/' . $project->seo_url) }}</loc>
+            <loc>{{ env('HTTP_DOMAIN') . '/' . getUrl('project_url') . '/' . $project->seo_url }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
             <priority>1</priority>
         </url>
@@ -66,7 +66,7 @@
     <!-- Dynamic Products -->
     @foreach ($products as $product)
          <url>
-            <loc>{{ url('/' . $product->category->seo_url . '/' . $product->seo_url) }}</loc>
+            <loc>{{ env('HTTP_DOMAIN') . '/' . $product->category->seo_url . '/' . $product->seo_url }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
             <priority>1</priority>
         </url>
@@ -75,7 +75,7 @@
     <!-- Dynamic Services -->
     @foreach ($services as $service)
          <url>
-            <loc>{{ url('/' . getUrl('services_url') . '/' . $service->seo_url ) }}</loc>
+            <loc>{{ env('HTTP_DOMAIN') . '/' . getUrl('services_url') . '/' . $service->seo_url ) }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
             <priority>1</priority>
         </url>
@@ -84,7 +84,7 @@
     <!-- Dynamic Using Areas -->
     @foreach ($using_areas as $using_area)
          <url>
-            <loc>{{ url('/' . getUrl('using_areas_url') . '/' . $using_area->seo_url) }}</loc>
+            <loc>{{ env('HTTP_DOMAIN') . '/' . getUrl('using_areas_url') . '/' . $using_area->seo_url) }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
             <priority>1</priority>
         </url>
