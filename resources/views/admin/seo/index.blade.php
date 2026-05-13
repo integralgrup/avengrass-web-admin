@@ -17,6 +17,10 @@ function getPageName($page){
             return 'Kataloglar';
         case 'contact':
             return 'İletişim';
+        case 'services':
+            return 'Hizmetler';
+        case 'using_areas':
+            return 'Kullanım Alanları';
         default:
             return 'Bilinmiyor';
     }

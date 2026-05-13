@@ -78,6 +78,8 @@
                                                 <option value="projects" {{ $page[$language->lang_code] == 'projects' ? 'selected' : '' }}>Projeler</option>
                                                 <option value="news" {{ $page[$language->lang_code] == 'news' ? 'selected' : '' }}>Haberler</option>
                                                 <option value="contact" {{ $page[$language->lang_code] == 'contact' ? 'selected' : '' }}>İletişim</option>
+                                                <option value="services" {{ $page[$language->lang_code] == 'services' ? 'selected' : '' }}>Hizmetler</option>
+                                                <option value="using_areas" {{ $page[$language->lang_code] == 'using_areas' ? 'selected' : '' }}>Kullanım Alanları</option>
                                             </select>
                                         </div>
                                         <div class="mb-3">

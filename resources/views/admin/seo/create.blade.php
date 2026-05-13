@@ -71,8 +71,8 @@
                                                 <option value="projects">Projeler</option>
                                                 <option value="news">Haberler</option>
                                                 <option value="contact">İletişim</option>
-                                                
-                                                <option value="contact">İletişim</option>
+                                                <option value="services">Hizmetler</option>
+                                                <option value="using_areas">Kullanım Alanları</option>
                                             </select>
                                         </div>
                                         <div class="mb-3">
