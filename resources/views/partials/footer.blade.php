@@ -406,14 +406,14 @@
                     <path d="M23.21,21.42c-2.64,0-4.78,2.14-4.78,4.78,0,2.64,2.14,4.78,4.78,4.78s4.78-2.14,4.78-4.78c0-2.64-2.15-4.77-4.78-4.78Zm0,8.37c-1.98,0-3.59-1.61-3.59-3.59s1.61-3.59,3.59-3.59,3.59,1.61,3.59,3.59h0c0,1.98-1.61,3.58-3.59,3.59Z" style="fill: #fff; isolation: isolate; opacity: .4; stroke: #fff;" />
                 </svg>
             </span>
-            <p class="cookie-text text-white text-14 leading-tight flex items-center max-w-300 sm:mr-0 sm:max-w-full">Bu site, hizmetlerini sunmak ve trafiği analiz etmek için çerezlerden yararlanıyor.</p>
+            <p class="cookie-text text-white text-14 leading-tight flex items-center max-w-300 sm:mr-0 sm:max-w-full">{{getStaticText(18)}}</p>
         </div>
         <div class="button-field flex sm:justify-center gap-20 md:gap-15">
             <a href="page.php" class="info leading-tight text-12 text-white whitespace-nowrap opacity-60 hover:opacity-100 flex items-center duration-450">
-                <span class="text">Bilgi Al</span>
+                <span class="text">{{getStaticText(19)}}</span>
             </a>
             <a href="javascript:;" class="accept-cookie flex items-center duration-450 gap-15">
-                <span class="text text-14 h-20 leading-tight text-white opacity-100 font-bold whitespace-nowrap flex items-center">Tamam</span>
+                <span class="text text-14 h-20 leading-tight text-white opacity-100 font-bold whitespace-nowrap flex items-center">{{getStaticText(20)}}</span>
                 <i class="icon text-16 h-20 flex items-center leading-tight duration-450">👍</i>
             </a>
         </div>
