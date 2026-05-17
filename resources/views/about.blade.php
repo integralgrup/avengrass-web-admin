@@ -116,17 +116,17 @@ $breadcrumbImage = $about->image;
                                 <div class="count-wrapper grid grid-cols-3 gap-50 lg:gap-40 md:gap-30 xs:grid-cols-3">
                                     <?php $list = [
                                         [
-                                            'title' => 'Project',
+                                            'title' => getStaticText(3),
                                             'number' => '80',
                                             'icon' => '+',
                                         ],
                                         [
-                                            'title' => 'Customer',
+                                            'title' => getStaticText(4),
                                             'number' => '100',
                                             'icon' => '+',
                                         ],
                                         [
-                                            'title' => 'Services',
+                                            'title' => getStaticText(5),
                                             'number' => '20',
                                             'icon' => '+',
                                         ],
