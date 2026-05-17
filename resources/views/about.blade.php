@@ -226,7 +226,7 @@ $breadcrumbImage = $about->image;
                                         <div class="image-field relative translate-z-0">
                                             <a href="javascript:;" class="image w-full group/image h-100 overflow-hidden translate-z-0 flex items-center justify-center">
                                                 <!-- SİYAH BEYAZ İPTAL EDİLMEK İSTENİYORSA, grayscale group-hover/image:grayscale-0 KALDIRILIR -->
-                                                <img src="" class="full-contain max-h-[50px] duration-450 grayscale group-hover/image:grayscale-0 group-hover/image:-translate-y-5 opacity-60 group-hover/image:opacity-100" loading="lazy" alt="">
+                                                <img src="<?= env('HTTP_DOMAIN') . '/' . getFolder(['uploads_folder', 'images_folder'], $item->lang ) .'/'. $item->image ?>" class="full-contain max-h-[50px] duration-450 grayscale group-hover/image:grayscale-0 group-hover/image:-translate-y-5 opacity-60 group-hover/image:opacity-100" loading="lazy" alt="">
                                             </a>
                                         </div>
                                     </div>
