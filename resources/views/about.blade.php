@@ -8,9 +8,9 @@ $breadcrumbImage = $about->image;
 ?>
     <main class="main-field">
     <!-- BREADCRUMB -->
-    <?php $title = 'ABOUT US';
-    $expo = 'Where Excellence Turns Green!';
-    $navigation = ['Home' => 'index.php', 'About Us' => 'javascript:;', 'Who Are We?' => 'javascript:;'];
+    <?php $title = getStaticText(6);
+    $expo = getStaticText(22);
+    $navigation = ['Home' => env('HTTP_DOMAIN'), getStaticText(6) => 'javascript:;', getStaticText(21) => 'javascript:;'];
     ?>
 
     <section class="breadcrumb relative header-space breadcrumb-anim">
