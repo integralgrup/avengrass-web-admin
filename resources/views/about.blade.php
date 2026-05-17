@@ -220,18 +220,18 @@ $breadcrumbImage = $about->image;
                 <div class="carousel-field relative">
                     <div class="reference-carousel swiper">
                         <div class="swiper-wrapper">
-                            <?php for ($i = 1; $i <= 10; $i++) : ?>
+                            <?php foreach ($certificates as $item) : ?>
                                 <div class="swiper-slide group/slide">
                                     <div class="content relative">
                                         <div class="image-field relative translate-z-0">
                                             <a href="javascript:;" class="image w-full group/image h-100 overflow-hidden translate-z-0 flex items-center justify-center">
                                                 <!-- SİYAH BEYAZ İPTAL EDİLMEK İSTENİYORSA, grayscale group-hover/image:grayscale-0 KALDIRILIR -->
-                                                <img src="../assets/image/reference/reference-<?= $i ?>.png" class="full-contain max-h-[50px] duration-450 grayscale group-hover/image:grayscale-0 group-hover/image:-translate-y-5 opacity-60 group-hover/image:opacity-100" loading="lazy" alt="">
+                                                <img src="" class="full-contain max-h-[50px] duration-450 grayscale group-hover/image:grayscale-0 group-hover/image:-translate-y-5 opacity-60 group-hover/image:opacity-100" loading="lazy" alt="">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                            <?php endfor; ?>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
@@ -251,7 +251,7 @@ $breadcrumbImage = $about->image;
                     <div class="item group/item srb-short">
                         <div class="title-field block z-10 relative sm:px-0">
                             <p class="page-title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em]">{{$about->mission_title}}</p>
-                            <p class="title text-[#8B8B8B] text-24 lg:text-22 md:text-20 sm:text-18 xs:text-16 font-semibold leading-tight duration-450 group-hover/item:text-main-500 mt-40 md:mt-30 sm:mt-20">We are here to add naturalness to life!</p>
+                            <p class="title text-[#8B8B8B] text-24 lg:text-22 md:text-20 sm:text-18 xs:text-16 font-semibold leading-tight duration-450 group-hover/item:text-main-500 mt-40 md:mt-30 sm:mt-20"></p>
                             <div class="text-editor !max-w-full editor-p:text-18 editor-li:text-18 sm:editor-p:text-16 sm:editor-li:text-16 xs:editor-p:text-14 xs:editor-li:text-14 mt-50 lg:mt-40 md:mt-30 sm:mt-20">
                                 <!-- Stylelar tasarımı yansıtmak adına eklenmiştir. / Backendde silinerek panel editörü üzerinden eklenmeli. -->
                                 <p style="font-weight: 300;">{{$about->mission_text}}</p>
@@ -264,7 +264,7 @@ $breadcrumbImage = $about->image;
                     <div class="item group/item srb-short">
                         <div class="title-field block z-10 relative sm:px-0">
                             <p class="page-title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em]">{{$about->vision_title}}</p>
-                            <p class="title text-[#8B8B8B] text-24 lg:text-22 md:text-20 sm:text-18 xs:text-16 font-semibold leading-tight duration-450 group-hover/item:text-main-500 mt-40 md:mt-30 sm:mt-20">We are here to add naturalness to life!</p>
+                            <p class="title text-[#8B8B8B] text-24 lg:text-22 md:text-20 sm:text-18 xs:text-16 font-semibold leading-tight duration-450 group-hover/item:text-main-500 mt-40 md:mt-30 sm:mt-20"></p>
                             <div class="text-editor !max-w-full editor-p:text-18 editor-li:text-18 sm:editor-p:text-16 sm:editor-li:text-16 xs:editor-p:text-14 xs:editor-li:text-14 mt-50 lg:mt-40 md:mt-30 sm:mt-20">
                                 <!-- Stylelar tasarımı yansıtmak adına eklenmiştir. / Backendde silinerek panel editörü üzerinden eklenmeli. -->
                                 <p style="font-weight: 300;">{{$about->vision_text}}</p>
