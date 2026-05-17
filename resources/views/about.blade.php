@@ -365,8 +365,8 @@ $breadcrumbImage = $about->image;
             <div class="wrapper relative rounded-[30px]">
                 <div class="border border-solid border-black/10 absolute left-0 top-1/2 -translate-y-1/2 w-full h-[100%] rounded-[30px] pointer-events-none"></div>
                 <div class="title-field bg-white px-[30px] block z-10 relative mx-auto w-fit translate-y-[-50%] space-y-[20px] md:space-y-15 sm:space-y-10 srb-short-all">
-                    <p class="page-title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em] text-center">OUR BRANDS</p>
-                    <p class="title text-main-500 text-40 lg:text-36 md:text-32 sm:text-24 xs:text-20 font-semibold leading-tight text-center">Fine Touch of Green</p>
+                    <p class="page-title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em] text-center">{{getStaticText(24)}}</p>
+                    <p class="title text-main-500 text-40 lg:text-36 md:text-32 sm:text-24 xs:text-20 font-semibold leading-tight text-center">{{getStaticText(25)}}</p>
                 </div>
                 <div class="reference-images p-[100px] 2xl:p-[80px] xl:p-[60px] lg:p-[40px] md:p-[30px] !pt-0">
                     <div class="wrapper flex flex-wrap justify-center gap-50 lg:gap-40 md:gap-30 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-2 xs:gap-20">
