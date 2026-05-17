@@ -215,7 +215,7 @@ $breadcrumbImage = $about->image;
         <div class="container max-w-[1500px]">
             <div class="wrapper">
                 <div class="title-field product-title-field space-y-[40px] md:space-y-30 sm:space-y-20 mb-60 2xl:mb-60 xl:mb-60 lg:mb-40 md:mb-30 sm:mb-20 srb-short-all ">
-                    <p class="title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em] text-center">OUR CERTIFICATES</p>
+                    <p class="title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em] text-center">{{getStaticText(23)}}</p>
                 </div>
                 <div class="carousel-field relative">
                     <div class="reference-carousel swiper">
@@ -250,11 +250,11 @@ $breadcrumbImage = $about->image;
                 <div class="inner-wrapper grid grid-cols-[minmax(0,1fr)_minmax(0,auto)_minmax(0,1fr)] gap-[120px] 2xl:gap-[100px] xl:gap-[80px] lg:gap-60 md:gap-30 md:grid-cols-1">
                     <div class="item group/item srb-short">
                         <div class="title-field block z-10 relative sm:px-0">
-                            <p class="page-title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em]">OUR MISSION</p>
+                            <p class="page-title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em]">{{$about->mission_title}}</p>
                             <p class="title text-[#8B8B8B] text-24 lg:text-22 md:text-20 sm:text-18 xs:text-16 font-semibold leading-tight duration-450 group-hover/item:text-main-500 mt-40 md:mt-30 sm:mt-20">We are here to add naturalness to life!</p>
                             <div class="text-editor !max-w-full editor-p:text-18 editor-li:text-18 sm:editor-p:text-16 sm:editor-li:text-16 xs:editor-p:text-14 xs:editor-li:text-14 mt-50 lg:mt-40 md:mt-30 sm:mt-20">
                                 <!-- Stylelar tasarımı yansıtmak adına eklenmiştir. / Backendde silinerek panel editörü üzerinden eklenmeli. -->
-                                <p style="font-weight: 300;">We are working to achieve this goal, to produce healthier, safer and more aesthetic living spaces we export to 70 countries of the world.</p>
+                                <p style="font-weight: 300;">{{$about->mission_text}}</p>
                             </div>
                         </div>
                     </div>
@@ -263,11 +263,11 @@ $breadcrumbImage = $about->image;
                     </div>
                     <div class="item group/item srb-short">
                         <div class="title-field block z-10 relative sm:px-0">
-                            <p class="page-title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em]">OUR VISION</p>
+                            <p class="page-title text-[#959595] text-20 sm:text-18 xs:text-16 font-light leading-tight relative tracking-[0.4em]">{{$about->vision_title}}</p>
                             <p class="title text-[#8B8B8B] text-24 lg:text-22 md:text-20 sm:text-18 xs:text-16 font-semibold leading-tight duration-450 group-hover/item:text-main-500 mt-40 md:mt-30 sm:mt-20">We are here to add naturalness to life!</p>
                             <div class="text-editor !max-w-full editor-p:text-18 editor-li:text-18 sm:editor-p:text-16 sm:editor-li:text-16 xs:editor-p:text-14 xs:editor-li:text-14 mt-50 lg:mt-40 md:mt-30 sm:mt-20">
                                 <!-- Stylelar tasarımı yansıtmak adına eklenmiştir. / Backendde silinerek panel editörü üzerinden eklenmeli. -->
-                                <p style="font-weight: 300;">To become a world-leading brand that improves the environment and quality of life with an innovative, reliable, principled and visionary approach.</p>
+                                <p style="font-weight: 300;">{{$about->vision_text}}</p>
                             </div>
                         </div>
                     </div>
